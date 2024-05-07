@@ -1,2 +1,5 @@
 .txt
 .env
+requirements.md
+db.txt
+node_modules
