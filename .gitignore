@@ -1,5 +1,5 @@
-.txt
-.env
+*.env
+*.txt
 requirements.md
 db.txt
 node_modules

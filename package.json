@@ -19,7 +19,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "backend-dev": "nodemon inde.js"
+    "backend-dev": "nodemon ./src/backend/backend_index.js",
+    "feed-users": "node ./src/backend/seeds/users.seed.js",
+    "feed-events": "node ./src/backend/seeds/events.seed.js"
   },
   "keywords": [],
   "author": "",
