@@ -14,7 +14,7 @@ const usersFeed = [
     password: "Anastasia123!@",
     profilePicture: 'src/assets/images/user-img/aanastasia.jpg',
     role:"user",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
   {
     username: "Admin",
@@ -22,7 +22,7 @@ const usersFeed = [
     password: "Admin123!@",
     profilePicture: 'src/assets/images/user-img/admin.jpg',
     role:"admin",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
   {
     username: "hotPotato",
@@ -30,7 +30,7 @@ const usersFeed = [
     password: "Alex123!@",
     profilePicture: 'src/assets/images/user-img/alex.jpg',
     role:"user",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
   {
     username: "interntGoblin",
@@ -38,7 +38,7 @@ const usersFeed = [
     password: "Bea123!@",
     profilePicture: 'src/assets/images/user-img/bea.jpg',
     role:"user",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
   {
     username: "saltySaltyLemon",
@@ -46,7 +46,7 @@ const usersFeed = [
     password: "Clara123!@",
     profilePicture: 'src/assets/images/user-img/clara.jpg',
     role:"user",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
   {
     username: "dolahbillsOnme",
@@ -54,7 +54,7 @@ const usersFeed = [
     password: "Ismael123!@",
     profilePicture: 'src/assets/images/user-img/ismael.jpg',
     role:"user",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
   {
     username: "cocoMangoCrispyPollo",
@@ -62,7 +62,7 @@ const usersFeed = [
     password: "Juan123!@",
     profilePicture: 'src/assets/images/user-img/juanjpg.jpg',
     role:"user",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
   {
     username: "theFrog",
@@ -70,7 +70,7 @@ const usersFeed = [
     password: "Pepe123!@",
     profilePicture: 'src/assets/images/user-img/pepe.jpg',
     role:"user",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
   {
     username: "violetsAreBlue",
@@ -78,7 +78,7 @@ const usersFeed = [
     password: "Rosa123!@",
     profilePicture: 'src/assets/images/user-img/rosa.jpg',
     role:"user",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
   {
     username: "softySofi",
@@ -86,7 +86,7 @@ const usersFeed = [
     password: "Sofia123!@",
     profilePicture: 'src/assets/images/user-img/sofia.jpg',
     role:"user",
-    attendingEvents:[]
+    // attendingEvents:[]
   },
 
 

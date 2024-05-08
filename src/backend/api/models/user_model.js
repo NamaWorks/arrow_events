@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
     password: {type: String, required: true},
     profilePicture:{type: String, required: false},
     role:{type: String, required: true, default:'user'},
-    attendingEvents:[{type: mongoose.Types.ObjectId, ref: 'events'}]
+    // attendingEvents:[{type: mongoose.Types.ObjectId, ref: 'events'}]
 },{
   timestamps: true,
   collection: "users"

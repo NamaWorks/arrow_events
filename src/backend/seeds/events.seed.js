@@ -1,5 +1,6 @@
 const mongoose =  require("mongoose")
 const Event = require("../api/models/event_model")
+const User = require("../api/models/user_model")
 
 require("dotenv").config()
 
@@ -10,7 +11,7 @@ const eventsFeed = [
     date: "2024-06-01",
     location: "Madrid, Spain",
     capacity: "50",
-    attendants: [],
+    attendants: ["cocoMangoCrispyPollo", "hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue", "softySofi"],
   },
   {
     title: "AI and Machine Learning Conference",
@@ -18,7 +19,7 @@ const eventsFeed = [
     date: "2024-06-15",
     location: "Barcelona, Spain",
     capacity: "30",
-    attendants: [],
+    attendants: ["Anananastasia", "cocoMangoCrispyPollo", "interntGoblin", "saltySaltyLemon", "theFrog", "violetsAreBlue", "softySofi"],
   },
   {
     title: "Cybersecurity Year-End Review",
@@ -26,7 +27,7 @@ const eventsFeed = [
     date: "2024-12-31",
     location: "Seville, Spain",
     capacity: "100",
-    attendants: [],
+    attendants: ["Anananastasia", "cocoMangoCrispyPollo", "hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme"],
   },
   {
     title: "Blockchain and Cryptocurrency Workshop",
@@ -34,7 +35,7 @@ const eventsFeed = [
     date: "2025-01-15",
     location: "Valencia, Spain",
     capacity: "20",
-    attendants: [],
+    attendants: ["hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue", "softySofi"],
   },
   {
     title: "Virtual Reality Expo",
@@ -42,7 +43,7 @@ const eventsFeed = [
     date: "2025-02-01",
     location: "Bilbao, Spain",
     capacity: "40",
-    attendants: [],
+    attendants: ["Anananastasia", "cocoMangoCrispyPollo", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue", "softySofi"],
   },
   {
     title: "Tech Startup Pitch Night",
@@ -50,7 +51,7 @@ const eventsFeed = [
     date: "2025-02-28",
     location: "Malaga, Spain",
     capacity: "35",
-    attendants: [],
+    attendants: ["Anananastasia",  "hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue", "softySofi"],
   },
   {
     title: "Data Science Symposium",
@@ -58,7 +59,7 @@ const eventsFeed = [
     date: "2025-03-15",
     location: "Granada, Spain",
     capacity: "50",
-    attendants: [],
+    attendants: ["Anananastasia", "cocoMangoCrispyPollo", "hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue", "softySofi"],
   },
   {
     title: "Internet of Things Conference",
@@ -66,7 +67,7 @@ const eventsFeed = [
     date: "2025-04-01",
     location: "Cordoba, Spain",
     capacity: "60",
-    attendants: [],
+    attendants: ["Anananastasia"],
   },
   {
     title: "Cloud Computing Forum",
@@ -74,7 +75,7 @@ const eventsFeed = [
     date: "2025-04-15",
     location: "Zaragoza, Spain",
     capacity: "45",
-    attendants: [],
+    attendants: ["Anananastasia", "cocoMangoCrispyPollo", "hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue", "softySofi"],
   },
   {
     title: "Augmented Reality Showcase",
@@ -82,7 +83,7 @@ const eventsFeed = [
     date: "2025-05-01",
     location: "Salamanca, Spain",
     capacity: "30",
-    attendants: [],
+    attendants: ["Anananastasia", "cocoMangoCrispyPollo", "hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue"],
   },
   {
     title: "Cybersecurity Bootcamp",
@@ -90,7 +91,7 @@ const eventsFeed = [
     date: "2025-05-15",
     location: "Vigo, Spain",
     capacity: "40",
-    attendants: [],
+    attendants: ["Anananastasia", "cocoMangoCrispyPollo", "hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue", "softySofi"],
   },
   {
     title: "Game Developers Gathering",
@@ -98,7 +99,7 @@ const eventsFeed = [
     date: "2025-06-01",
     location: "Alicante, Spain",
     capacity: "50",
-    attendants: [],
+    attendants: ["Anananastasia", "cocoMangoCrispyPollo", "hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue", "softySofi"],
   },
   {
     title: "Tech Leaders Roundtable",
@@ -106,22 +107,23 @@ const eventsFeed = [
     date: "2025-06-15",
     location: "Cadiz, Spain",
     capacity: "35",
-    attendants: [],
+    attendants: ["Anananastasia", "cocoMangoCrispyPollo", "hotPotato", "interntGoblin", "saltySaltyLemon", "dolahbillsOnme", "theFrog", "violetsAreBlue", "softySofi"],
   }
 ]
 
-let eventsDocuments = eventsFeed.map(eventItem => new Event({
-    title: eventItem.title ,
-    description: eventItem.description ,
-    date: eventItem.date ,
-    location: eventItem.location ,
-    capacity: eventItem.capacity ,
-    attendants: eventItem.attendants ,
-  }))
+// let eventsDocuments = eventsFeed.map(eventItem => new Event({
+//     title: eventItem.title ,
+//     description: eventItem.description ,
+//     date: eventItem.date ,
+//     location: eventItem.location ,
+//     capacity: eventItem.capacity ,
+//     attendants: eventItem.attendants ,
+//   }))
 
-  // console.log(eventsDocuments)
+
 
 const feedEvents = async () => {
+  let eventsData = []
   try {
     await mongoose
     .connect(process.env.DB_URL)
@@ -130,8 +132,39 @@ const feedEvents = async () => {
       allEvents.length ? await Event.collection.drop() : console.log(`event collection already empty`)
     })
     .catch(err => console.log(`error at removing event collection : ${err}`))
+    
+
+
+
+
+    .then( async () => {
+      const usersData = await User.find()
+
+      eventsFeed.forEach(eventItem => {
+        const eventAttendants = eventItem.attendants
+        let attendantsIdArr = []
+
+        eventAttendants.forEach( async (attendant) => {
+          usersData.forEach(userItem => {
+            if(userItem.username == attendant){
+              let id = String(userItem._id)
+              attendantsIdArr.push(id)
+            }
+            eventItem.attendants = attendantsIdArr
+          })
+        })
+        eventsData.push(new Event(eventItem))
+      })
+    }
+    )
+
+
+
+
+
+
     .then(async () => {
-      await Event.insertMany(eventsDocuments)
+      await Event.insertMany(eventsData)
       console.log(`events uploaded to DB`)
       process.exit()
     })
