@@ -10,7 +10,6 @@ const eventSchema = new Schema(
     location:{type: String, required: true},
     capacity:{type: Number, required: false},
     attendants: [{type: mongoose.Types.ObjectId, ref: "users"}]
-    // attendants: {type: String}
 },{
   timestamps: true,
   collection: "events"
