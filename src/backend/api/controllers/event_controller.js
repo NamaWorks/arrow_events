@@ -11,15 +11,13 @@ const getEvents = async (req, res, next) => {
 
 const postEvent = async (req, res, next) => {
   try {
-    const newEvent = new Event(
-      {
-      ...req.body
-      }
-    )
+    const newEvent = new Event({
+      ...req.body,
+    })
     const eventSaved = await newEvent.save()
     return res.status(201).json(eventSaved)
   } catch (err) {
-    return res.status(400),json(`error at postEvent: ${err}`)
+    return res.status(400).json(`error at postEvent: ${err} // ${req.body}`)
   }
 }
 

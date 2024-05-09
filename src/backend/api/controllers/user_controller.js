@@ -52,7 +52,7 @@ const deleteUser = async (req, res, next) => {
   try {
     const { id } = req.params
     const userToDelete = await User.findById(id)
-    if(userToDelete.profilePicture){deleteImgCloudinary(userToDelete.profilePicture)}
+    if(userToDelete.profilePicture){await deleteImgCloudinary(userToDelete.profilePicture)}
 
     const userDeleted = await User.findByIdAndDelete(id)
 
@@ -80,3 +80,4 @@ const updateUser = async (req, res, next) => {
   }
 }
 
+module.exports = { getUsers, userLogin, userSignUp, deleteUser, updateUser }
