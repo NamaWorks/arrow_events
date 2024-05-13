@@ -20,9 +20,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "backend-dev": "nodemon ./src/backend/backend_index.js",
-    "feed-users": "node ./src/backend/seeds/users.seed.js",
-    "feed-events": "node ./src/backend/seeds/events.seed.js"
+    "backend-dev": "nodemon index.js",
+    "feed-users": "node ./src/seeds/users.seed.js",
+    "feed-events": "node ./src/seeds/events.seed.js"
   },
   "keywords": [],
   "author": "",

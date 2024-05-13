@@ -1,8 +1,8 @@
 require("dotenv").config()
 const express = require("express")
-const { connectDB } = require("./config/db.js")
-const userRouter = require("./api/routes/user_routes.js")
-const eventsRouter = require("./api/routes/event_routes.js")
+const { connectDB } = require("./src/config/db.js")
+const userRouter = require("./src/api/routes/user_routes.js")
+const eventsRouter = require("./src/api/routes/event_routes.js")
 const cloudinary = require("cloudinary").v2
 const cors = require("cors")
 const server = express()
@@ -12,6 +12,8 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 })
+
+
 
 connectDB()
 server.use(express.json())
