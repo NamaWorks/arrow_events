@@ -5,7 +5,7 @@ export const data = {
         function: "",
       },
       login: {
-        text: "login",
+        text: "log in",
         function: "",
       },
       create_event: {
@@ -16,6 +16,10 @@ export const data = {
         text: "confirm assistance",
         functions: "",
       },
+      logout: {
+        text: "log out",
+        function: ""
+      }
   },
 
 }

@@ -12,9 +12,10 @@ export const printNavbar = () => {
   for (const navElement in data.navItems) {
     const li = document.createElement("li")
     li.classList.add("nav-li")
+    li.setAttribute("id", `${navElement}`)
     const btnLi = document.createElement("button")
 
-    //! PREPARE THE EVENTS FOR THE NsAV ELEMENTS
+    //! PREPARE THE EVENTS FOR THE NAV ELEMENTS
     btnLi.addEventListener("click", () => console.log(data.navItems[navElement].text))
 
     btnLi.innerText = data.navItems[navElement].text
