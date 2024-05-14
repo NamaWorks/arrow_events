@@ -6,14 +6,14 @@ const User = require("../models/user_model");
 
 const eventsRouter = require("express").Router()
 
-eventsRouter.get("/all", getEvents)
+// eventsRouter.get("/all", getEvents)
 eventsRouter.post("/new", postEvent)
 eventsRouter.put("/update/:id", updateEvent)
 eventsRouter.delete("/remove/:id", removeEvent)
-eventsRouter.get("/", async (req, res, next) => {
+eventsRouter.get("/all", async (req, res, next) => {
   try {
     const events = await Event.find().populate('attendants')
-    console.log(events);
+    // console.log(events);
     return res.status(200).json(events)
   } catch (err) {
     return next(err)
