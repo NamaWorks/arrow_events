@@ -4,6 +4,6 @@ import { printLogin } from "./src/components/pages/login_section/login_section";
 
 printNavbar()
 
-// if(!sessionStorage.getItem("user")){
-//   printLogin()
-// } else {printEvents() }
+if(!sessionStorage.getItem("user")){
+  printLogin()
+} else {printEvents() }
