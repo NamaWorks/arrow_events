@@ -3,7 +3,7 @@ import { app } from "../../../data/global_variables";
 
 export const printEvents = async () => {
   const eventsSection = document.createElement("section")
-  eventsSection.setAttribute("id", "events")
+  eventsSection.setAttribute("id", "events_section")
   app.append(eventsSection)
   
   const res = await fetch("http://localhost:3000/events/all");
@@ -59,6 +59,8 @@ export const printEvents = async () => {
     const attendantsListUl = document.createElement("ul")
     attendantsListUl.classList.add("attendants-list")
     eventAttendantsDiv.append(attendantsListUl)
+
+    // --------------------------------------------
 
     const eventAttendants = await event.attendants
     eventAttendants.forEach(attendant => {

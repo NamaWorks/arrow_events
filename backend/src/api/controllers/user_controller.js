@@ -16,17 +16,18 @@ const getUsers = async (req, res, next) => {
 
 const userLogin = async (req, res, next) => {
   try {
-    const userMail = await User.findOne({email:req.body.email})
+    console.log(req.body)
+    const user = await User.findOne({username: req.body.username})
 
-    if(userMail){
-      console.log(userMail)
-      if(bcrypt.compareSync(req.body.password, userMail.passwordl)){
-        const token = generateSign(userMail._id)
-        return res.status(200).json({userMail, token})
-      }
-    }
+      if(user){
+        if(bcrypt.compareSync(req.body.password, user.password)){
+          const token = generateSign(user._id)
+          return res.status(200).json({user, token})
+        } else {return res.status(400).json(`error at login`)}
+      } else { return res.status(400).json(`error at login`)}
+
   } catch (err) {
-    return res.status(400).json(`error at userSignUp: ${err}`)
+    return res.status(400).json(`error at login: ${err}`)
   }
 }
 

@@ -1,5 +1,9 @@
 export const data = {
   navItems: {
+      events: {
+        text: "events",
+        functions: "",
+      },
     	signup: {
         text: "sign up",
         function: "",
@@ -12,15 +16,14 @@ export const data = {
         text: "create event",
         function: "",
       },
-      confirm_assistance: {
-        text: "confirm assistance",
-        functions: "",
-      },
       logout: {
         text: "log out",
         function: ""
+      },
+      user: {
+        text:"user",
+        function:""
       }
   },
-
 }
 
