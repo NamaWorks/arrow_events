@@ -1,5 +1,4 @@
 import { printNavbar } from "../../components/elements/navbar/navbar"
-import { checkNavbar } from "../../components/elements/navbar/navbar_checker"
 import { printEvents } from "../../components/pages/events_section/events_section"
 
  export const loginSubmit = async () => {

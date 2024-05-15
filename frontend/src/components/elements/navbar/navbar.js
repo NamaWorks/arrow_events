@@ -30,7 +30,8 @@ export const printNavbar = () => {
     ulNav.append(li)
   }
 
-  app.append(nav)
+  app.insertBefore(nav, app.firstChild)
 
-checkNavbar()
+  checkNavbar()
+  
 }
