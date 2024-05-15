@@ -1,5 +1,6 @@
 
 import { logoutSubmit } from "../../../functions/logout/logout_submit"
+import { printSignup } from "../../pages/signup_section/signup_section"
 
 export const checkNavbar = () => {
 
@@ -14,5 +15,7 @@ export const checkNavbar = () => {
 
 
   if(document.getElementById("logout")) {document.getElementById("logout").addEventListener("click", logoutSubmit)}
+
+  if(document.getElementById("signup")) {document.getElementById("signup").addEventListener("click", printSignup)}
 }
 
