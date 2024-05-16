@@ -19,12 +19,20 @@ export const printCreateEventSection = () => {
   eventNameInput.setAttribute("id", "event-name-input")
   formElement.append(eventNameInput)
 
+  const locationLabel = document.createElement("label")
+  locationLabel.setAttribute("for", "event-location-input")
+  locationLabel.innerText = "event location"
+  formElement.append(locationLabel)
   const eventLocationInput = document.createElement("input")
   eventLocationInput.setAttribute("type", "text")
   eventLocationInput.setAttribute("placeholder", "event location")
   eventLocationInput.setAttribute("id", "event-location-input")
   formElement.append(eventLocationInput)
 
+  const dateLabel = document.createElement("label")
+  dateLabel.setAttribute("for","event-date-input")
+  dateLabel.innerText = "event date"
+  formElement.append(dateLabel)
   const eventDateInput = document.createElement("input")
   eventDateInput.setAttribute("type", "date")
   eventDateInput.setAttribute("id", "event-date-input")
