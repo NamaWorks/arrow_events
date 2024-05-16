@@ -1,7 +1,9 @@
 import { app } from "../../../data/global_variables"
+import { clearSections } from "../../../functions/sections/clear_sections"
 import { signupSubmit } from "../../../functions/signup/signup_submit"
 
 export const printSignup = () => {
+  clearSections()
   const signupSection = document.createElement("section")
   signupSection.setAttribute("id", "signup_section")
   app.append(signupSection)
@@ -10,7 +12,7 @@ export const printSignup = () => {
   formElement.setAttribute("id", "signup-form")
   signupSection.append(formElement)
 
-  const usernameLabel = docuement.createElement("label")
+  const usernameLabel = document.createElement("label")
   usernameLabel.setAttribute("for", "signup-username-input")
   usernameLabel.innerText = "username"
   formElement.append(usernameLabel)

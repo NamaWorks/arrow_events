@@ -1,9 +1,9 @@
 import { printLogin } from "../../components/pages/login_section/login_section";
 
 export const signupSubmit = async () => {
-  const username = document.querySelector("#username-input").value;
-  const password = document.querySelector("#password-input").value;
-  const email = document.querySelector("#email-input").value;
+  const username = document.querySelector("#signup-username-input").value;
+  const password = document.querySelector("#signup-password-input").value;
+  const email = document.querySelector("#signup-email-input").value;
   // const profilePicture = document
   const data = await fetch("http://localhost:3000/users/new", {
     headers: {

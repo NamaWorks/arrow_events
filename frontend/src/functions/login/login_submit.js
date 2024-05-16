@@ -2,8 +2,8 @@ import { printNavbar } from "../../components/elements/navbar/navbar"
 import { printEvents } from "../../components/pages/events_section/events_section"
 
  export const loginSubmit = async () => {
-  const username = document.querySelector("#username-input").value
-  const password = document.querySelector("#password-input").value
+  const username = document.querySelector("#login-username-input").value
+  const password = document.querySelector("#login-password-input").value
   const data = await fetch("http://localhost:3000/users/login", {
     headers: {
       "Content-type" : "application/json",

@@ -1,7 +1,10 @@
 import { data } from "../../../data/data";
 import { app } from "../../../data/global_variables";
+import { clearSections } from "../../../functions/sections/clear_sections";
+
 
 export const printEvents = async () => {
+  clearSections()
   const eventsSection = document.createElement("section")
   eventsSection.setAttribute("id", "events_section")
   app.append(eventsSection)

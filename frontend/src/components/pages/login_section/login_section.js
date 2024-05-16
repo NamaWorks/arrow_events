@@ -1,7 +1,9 @@
 import { app } from "../../../data/global_variables";
 import { loginSubmit } from "../../../functions/login/login_submit";
+import { clearSections } from "../../../functions/sections/clear_sections";
 
 export const printLogin = () => {
+  clearSections()
   const loginSection = document.createElement("section")
   loginSection.setAttribute("id", "login_section")
   app.append(loginSection)
