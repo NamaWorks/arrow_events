@@ -18,11 +18,9 @@ export const printNavbar = () => {
   for (const navElement in data.navItems) {
     const li = document.createElement("li")
     li.classList.add("nav-li")
-    li.setAttribute("id", `${navElement}`)
+    li.setAttribute("id", `${navElement}-li`)
     const btnLi = document.createElement("button")
-
-    //! PREPARE THE EVENTS FOR THE NAV ELEMENTS
-    btnLi.addEventListener("click", () => console.log(data.navItems[navElement].text))
+    btnLi.setAttribute("id", `${navElement}`)
 
     btnLi.innerText = data.navItems[navElement].text
 

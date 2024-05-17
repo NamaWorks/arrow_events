@@ -7,9 +7,9 @@ const User = require("../models/user_model");
 const eventsRouter = require("express").Router()
 
 // eventsRouter.get("/all", getEvents)
-eventsRouter.post("/new", postEvent)
-eventsRouter.put("/update/:id", updateEvent)
-eventsRouter.delete("/remove/:id", removeEvent)
+eventsRouter.post("/new",[isAuth], postEvent)
+eventsRouter.put("/update/:id",[isAdmin], updateEvent)
+eventsRouter.delete("/remove/:id",[isAdmin], removeEvent)
 eventsRouter.get("/all", async (req, res, next) => {
   try {
     const events = await Event.find().populate('attendants')

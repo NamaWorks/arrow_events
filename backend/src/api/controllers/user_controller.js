@@ -14,6 +14,16 @@ const getUsers = async (req, res, next) => {
   }
 }
 
+const getUserById = async (req, res, next) => {
+  try {
+    const {id} = req.params
+    const user = await User.findById(id)
+    return res.status(200).json(user)
+  } catch (err) {
+    return res.status(400).json(`error at geUserById: {err}`)
+  }
+}
+
 const userLogin = async (req, res, next) => {
   try {
     console.log(req.body)
@@ -81,4 +91,4 @@ const updateUser = async (req, res, next) => {
   }
 }
 
-module.exports = { getUsers, userLogin, userSignUp, deleteUser, updateUser }
+module.exports = { getUsers, userLogin, userSignUp, deleteUser, updateUser, getUserById }

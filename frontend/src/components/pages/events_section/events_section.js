@@ -47,7 +47,11 @@ export const printEvents = async () => {
     const eventCapacity = document.createElement("h4")
     eventCapacity.innerText = "Capacity: " + await event.capacity
 
-    eventInfoData.append(eventDate, eventLocation, eventCapacity)
+    const eventDescription = document.createElement("p")
+    eventDescription.innerText = await event.description
+    
+
+    eventInfoData.append(eventDate, eventLocation, eventCapacity, eventDescription)
 
     // --------------------------------------------
 

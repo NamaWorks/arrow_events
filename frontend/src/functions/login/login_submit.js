@@ -19,6 +19,7 @@ import { printEvents } from "../../components/pages/events_section/events_sectio
 
   if(data.status == 200){
     sessionStorage.setItem("user", JSON.stringify(dataResponse))
+    // sessionStorage.setItem("user", dataResponse.token)
     
     alert(`welcome ${username}`)
   

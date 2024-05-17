@@ -6,9 +6,5 @@ import { printSignup } from "./src/components/pages/signup_section/signup_sectio
 
 printNavbar()
 
-// if(!sessionStorage.getItem("user")){
-//   printLogin()
-// } else {printEvents() }
-
-// printCreateEventSection()
+printEvents()
 
