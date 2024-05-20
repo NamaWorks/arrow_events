@@ -1,4 +1,5 @@
 import { app } from "../../../data/global_variables"
+import { submitProfileChanges } from "../../../functions/edit_profile/edit_profile_submit"
 import { clearSections } from "../../../functions/sections/clear_sections"
 
 export const printEditProfileSection = async () => {
@@ -40,7 +41,7 @@ export const printEditProfileSection = async () => {
   const changeProfilePictureInput = document.createElement("input")
   changeProfilePictureInput.setAttribute("id", "change-pfp-input")
   changeProfilePictureInput.setAttribute("type", "file")
-  changeProfilePictureInput.setAttribute("accept", "iamge/png, image/jpg")
+  changeProfilePictureInput.setAttribute("accept", "image/png, image/jpg")
   formElement.append(changeProfilePictureInput)
 
   const changeUsernameLabel = document.createElement("label")
@@ -67,5 +68,9 @@ export const printEditProfileSection = async () => {
   submitChangesBtn.innerText = "save changes"
   submitChangesBtn.setAttribute("id", "save-changes-btn")
   //! PENDING TO ADD THE FUNCTIONALITY TO UPDATE THE DATA
+  submitChangesBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    submitProfileChanges()
+  } )
   formElement.append(submitChangesBtn)
 }

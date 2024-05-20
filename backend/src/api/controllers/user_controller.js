@@ -80,13 +80,30 @@ const updateUser = async (req, res, next) => {
     const originalUser = await User.findById(id)
     if(originalUser.profilePicture){deleteImgCloudinary(originalUser.profilePicture)}
 
-    const newUser = new User(req.body)
-    newUser._id = id
+    if((bcrypt.compareSync(req.body.password, originalUser.password)) || req.body.password == ""){
+      const newUser = new User({
+        username : req.body.username,
+        profilePicture: req.body.profilePicture
+      })
+      newUser._id = id
+  
+      if(req.file){newUser.profilePicture = req.file.path}
+  
+      const updatedUser = await User.findByIdAndUpdate(id, newUser, {new:true})
+      return res.status(200).json(updatedUser)
+    } else {
+      const newUser = new User({
+        username : req.body.username,
+        password : bcrypt.hashSync(req.body.password, 10),
+        profilePicture: req.body.profilePicture,
+      })
 
-    if(req.file){newUser.profilePicture = req.file.path}
+      newUser._id = id
+      if(req.file){newUser.profilePicture = req.file.path}
+      const updatedUser = await User.findByIdAndUpdate(id, newUser, {new:true})
+      return res.status(200).json(updatedUser)
+    }
 
-    const updatedUser = await User.findByIdAndUpdate(id, newUser, {new:true})
-    return res.status(200).json(updatedUser)
   } catch (err) {
     return res.status(400).json(`error ar updateUser: ${err}`)
   }

@@ -4,6 +4,7 @@ import { printEvents } from "../../components/pages/events_section/events_sectio
  export const loginSubmit = async () => {
   const username = document.querySelector("#login-username-input").value
   const password = document.querySelector("#login-password-input").value
+  console.log(username + password)
   const data = await fetch("http://localhost:3000/users/login", {
     headers: {
       "Content-type" : "application/json",
@@ -14,9 +15,10 @@ import { printEvents } from "../../components/pages/events_section/events_sectio
       password:password
     })
   })
+
   
   const dataResponse = await data.json()
-
+  
   if(data.status == 200){
     localStorage.setItem("user", JSON.stringify(dataResponse))
     // sessionStorage.setItem("user", dataResponse.token)
