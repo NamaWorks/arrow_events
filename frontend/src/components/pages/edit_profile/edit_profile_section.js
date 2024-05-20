@@ -4,7 +4,7 @@ import { clearSections } from "../../../functions/sections/clear_sections"
 export const printEditProfileSection = async () => {
   clearSections()
 
-  const user = sessionStorage.getItem("user")
+  const user = localStorage.getItem("user")
 
   const userJson = JSON.parse(user)
   const userId = userJson.user._id

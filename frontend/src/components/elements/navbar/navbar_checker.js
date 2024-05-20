@@ -8,10 +8,10 @@ import { printLogedUserSection } from "../../pages/user_page/user_section"
 
 export const checkNavbar = () => {
 
-  if(sessionStorage.getItem("user")){
+  if(localStorage.getItem("user")){
     if(document.getElementById("login-li")){document.getElementById("login-li").remove()}
     if(document.getElementById("signup-li")){document.getElementById("signup-li").remove()}
-  } else if(!sessionStorage.getItem("user")){
+  } else if(!localStorage.getItem("user")){
     if(document.getElementById("logout-li")) {document.getElementById("logout-li").remove()}
     if(document.getElementById("user-li")) {document.getElementById("user").remove()}
     if(document.getElementById("create_event-li")) {document.getElementById("create_event-li").remove()}

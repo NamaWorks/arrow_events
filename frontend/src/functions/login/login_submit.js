@@ -18,7 +18,7 @@ import { printEvents } from "../../components/pages/events_section/events_sectio
   const dataResponse = await data.json()
 
   if(data.status == 200){
-    sessionStorage.setItem("user", JSON.stringify(dataResponse))
+    localStorage.setItem("user", JSON.stringify(dataResponse))
     // sessionStorage.setItem("user", dataResponse.token)
     
     alert(`welcome ${username}`)

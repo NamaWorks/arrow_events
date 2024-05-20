@@ -4,7 +4,7 @@ import { printEditProfileSection } from "../edit_profile/edit_profile_section";
 
 export const printLogedUserSection = async () => {
   clearSections()
-  const user = sessionStorage.getItem("user")
+  const user = localStorage.getItem("user")
 
   const userJson = JSON.parse(user)
   const userId = userJson.user._id
