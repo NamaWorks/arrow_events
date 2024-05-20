@@ -23,6 +23,7 @@ const postEvent = async (req, res, next) => {
 
 const updateEvent = async (req, res, next) => {
   try {
+    console.log(req.body)
     const { id } = req.params
     const originalEvent = await Event.findById(id)
     const newEvent = new Event(req.body)

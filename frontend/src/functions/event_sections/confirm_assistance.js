@@ -1,11 +1,40 @@
+import { printEvents } from "../../components/pages/events_section/events_section"
 import { api } from "../../data/global_variables"
 
 export const confirmAssistance = async (btnElement) => {
-  const article = btnElement.parentElement
-  const eventTitle = article.querySelector(".event-title").innerText
+  const logedUser = JSON.parse(localStorage.getItem("user"))
+  const eventTitle = btnElement.parentElement.querySelector(".event-title").innerText
+
   const events = await fetch(api + "events/all")
   const eventsResponse = await events.json()
-  console.log(eventsResponse)
 
-  const eventsAttendantsUsername = eventsResponse.map()
+  eventsResponse.forEach( async (event) => {
+
+    const eventTitleDb = event.title
+    const eventAttendantsDb = event.attendants
+
+    const updatedAttendants = [...eventAttendantsDb]
+    if(eventTitleDb == eventTitle){
+      updatedAttendants.push(logedUser.user)
+
+      // now we update the event
+      const eventId = event._id
+
+      const data = await fetch(api + "events/update/" + eventId, {
+        headers:{
+          "Content-type": "application/json",
+          "Authorization": "Bearer " + logedUser.token
+        },
+        method: "PUT",
+        body: JSON.stringify({
+          ...event,
+          attendants: updatedAttendants
+        })
+      })
+
+      const dataResponse = await data.json()
+      console.log(dataResponse)
+      printEvents()
+    }
+  });
 }
