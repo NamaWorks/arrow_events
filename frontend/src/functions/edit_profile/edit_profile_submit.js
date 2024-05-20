@@ -1,3 +1,4 @@
+import { api } from "../../data/global_variables"
 import { logoutSubmit } from "../logout/logout_submit"
 
 export const submitProfileChanges = async () => {
@@ -17,7 +18,7 @@ export const submitProfileChanges = async () => {
   console.log(currentPassword)
   console.log(newPassword)
 
-  const data = await fetch(`http://localhost:3000/users/update/${user._id}`, {
+  const data = await fetch(`${api}users/update/${user._id}`, {
     headers: {
        "Content-type": "application/json",
        "Authorization": "Bearer " + token

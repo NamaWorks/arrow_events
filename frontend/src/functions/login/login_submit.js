@@ -1,11 +1,12 @@
 import { printNavbar } from "../../components/elements/navbar/navbar"
 import { printEvents } from "../../components/pages/events_section/events_section"
+import { api } from "../../data/global_variables"
 
  export const loginSubmit = async () => {
   const username = document.querySelector("#login-username-input").value
   const password = document.querySelector("#login-password-input").value
   console.log(username + password)
-  const data = await fetch("http://localhost:3000/users/login", {
+  const data = await fetch(api+"users/login", {
     headers: {
       "Content-type" : "application/json",
     },

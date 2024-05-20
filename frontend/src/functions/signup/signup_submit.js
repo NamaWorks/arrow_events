@@ -1,11 +1,12 @@
 import { printLogin } from "../../components/pages/login_section/login_section";
+import { api } from "../../data/global_variables";
 
 export const signupSubmit = async () => {
   const username = document.querySelector("#signup-username-input").value;
   const password = document.querySelector("#signup-password-input").value;
   const email = document.querySelector("#signup-email-input").value;
   // const profilePicture = document
-  const data = await fetch("http://localhost:3000/users/new", {
+  const data = await fetch(api+"users/new", {
     headers: {
       "Content-type": "application/json",
     },

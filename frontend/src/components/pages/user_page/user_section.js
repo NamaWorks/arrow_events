@@ -1,4 +1,4 @@
-import { app } from "../../../data/global_variables";
+import { api, app } from "../../../data/global_variables";
 import { clearSections } from "../../../functions/sections/clear_sections";
 import { printEditProfileSection } from "../edit_profile/edit_profile_section";
 
@@ -9,7 +9,7 @@ export const printLogedUserSection = async () => {
   const userJson = JSON.parse(user)
   const userId = userJson.user._id
   
-  const userFetch = await fetch("http://localhost:3000/users/" + userId)
+  const userFetch = await fetch(api+"users/" + userId)
   const userResponse = await userFetch.json()
 
   const logedUserSection = document.createElement("section")

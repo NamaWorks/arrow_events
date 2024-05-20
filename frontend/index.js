@@ -4,6 +4,4 @@ import { printEvents } from "./src/components/pages/events_section/events_sectio
 
 printNavbar()
 
-// printEvents()
-printEditProfileSection()
-
+printEvents()

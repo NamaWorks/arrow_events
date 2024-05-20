@@ -1,5 +1,6 @@
 import { printNavbar } from "../../components/elements/navbar/navbar"
 import { printEvents } from "../../components/pages/events_section/events_section"
+import { api } from "../../data/global_variables"
 
 export const createEventSubmit = async () => {
   const eventName = document.querySelector("#event-name-input").value
@@ -7,7 +8,7 @@ export const createEventSubmit = async () => {
   const eventDate = document.querySelector("#event-date-input").value
   const eventDescription = document.querySelector("#event-description-input").value
   const eventCapacity = document.querySelector("#event-capacity-input").value
-  const data = await fetch("http://localhost:3000/events/new", {
+  const data = await fetch(api+"events/new", {
     headers: {
       "Content-type": "application/json",
     },

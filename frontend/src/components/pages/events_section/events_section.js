@@ -1,5 +1,7 @@
 import { data } from "../../../data/data";
-import { app } from "../../../data/global_variables";
+import { api, app } from "../../../data/global_variables";
+import { cancelAssistance } from "../../../functions/event_sections/cancel_assistance";
+import { confirmAssistance } from "../../../functions/event_sections/confirm_assistance";
 import { clearSections } from "../../../functions/sections/clear_sections";
 
 
@@ -9,7 +11,7 @@ export const printEvents = async () => {
   eventsSection.setAttribute("id", "events_section")
   app.append(eventsSection)
   
-  const res = await fetch("http://localhost:3000/events/all");
+  const res = await fetch(api+"events/all");
   const events = await res.json()
   
   for (const event of events) {
@@ -49,7 +51,6 @@ export const printEvents = async () => {
 
     const eventDescription = document.createElement("p")
     eventDescription.innerText = await event.description
-    
 
     eventInfoData.append(eventDate, eventLocation, eventCapacity, eventDescription)
 
@@ -80,5 +81,28 @@ export const printEvents = async () => {
       attendantEmail.innerText = attendant.email
       attendantLi.append(attendantEmail)
     });
+
+    // ---------------------------------------------
+
+    const logedUser = JSON.parse(localStorage.getItem("user"))
+    const user = await fetch(api+"users/"+logedUser.user._id)
+    const userResponse = await user.json()
+    
+    const eventAttendantsByName = eventAttendants.map(e => e.username)
+    
+    if(!eventAttendantsByName.includes(userResponse.username)){
+      const confirmAssistanceBtn = document.createElement("button")
+      confirmAssistanceBtn.innerText = "confirm assistance"
+      confirmAssistanceBtn.classList.add("confirm-assistance-btn")
+      confirmAssistanceBtn.addEventListener("click", function (e) {confirmAssistance(this)})
+      article.append(confirmAssistanceBtn)
+    } else if(eventAttendantsByName.includes(userResponse.username)){
+      const cancelAssistanceBtn = document.createElement("button")
+      cancelAssistanceBtn.innerText = "cancel assistance"
+      cancelAssistanceBtn.classList.add("cancel-assistance-btn")
+      cancelAssistanceBtn.addEventListener("click", function (e) {cancelAssistance(this)})
+      article.append(cancelAssistanceBtn)
+    }
+    
   }
 }
