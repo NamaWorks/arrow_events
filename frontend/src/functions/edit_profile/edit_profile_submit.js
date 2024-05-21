@@ -39,6 +39,4 @@ export const submitProfileChanges = async () => {
   } else {
     alert(`error at saving changes`)
   }
-
-
 }

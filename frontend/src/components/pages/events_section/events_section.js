@@ -85,24 +85,26 @@ export const printEvents = async () => {
     // ---------------------------------------------
 
     const logedUser = JSON.parse(localStorage.getItem("user"))
-    const user = await fetch(api+"users/"+logedUser.user._id)
-    const userResponse = await user.json()
-    
-    const eventAttendantsByName = eventAttendants.map(e => e.username)
-    
-    if(!eventAttendantsByName.includes(userResponse.username)){
-      const confirmAssistanceBtn = document.createElement("button")
-      confirmAssistanceBtn.innerText = "confirm assistance"
-      confirmAssistanceBtn.classList.add("confirm-assistance-btn")
-      confirmAssistanceBtn.addEventListener("click", function (e) {confirmAssistance(this)})
-      article.append(confirmAssistanceBtn)
-    } else if(eventAttendantsByName.includes(userResponse.username)){
-      const cancelAssistanceBtn = document.createElement("button")
-      cancelAssistanceBtn.innerText = "cancel assistance"
-      cancelAssistanceBtn.classList.add("cancel-assistance-btn")
-      cancelAssistanceBtn.addEventListener("click", function (e) {cancelAssistance(this)})
-      article.append(cancelAssistanceBtn)
+
+    if(logedUser){
+      const user = await fetch(api+"users/"+logedUser.user._id)
+      const userResponse = await user.json()
+      
+      const eventAttendantsByName = eventAttendants.map(e => e.username)
+      
+      if(!eventAttendantsByName.includes(userResponse.username)){
+        const confirmAssistanceBtn = document.createElement("button")
+        confirmAssistanceBtn.innerText = "confirm assistance"
+        confirmAssistanceBtn.classList.add("confirm-assistance-btn")
+        confirmAssistanceBtn.addEventListener("click", function (e) {confirmAssistance(this)})
+        article.append(confirmAssistanceBtn)
+      } else if(eventAttendantsByName.includes(userResponse.username)){
+        const cancelAssistanceBtn = document.createElement("button")
+        cancelAssistanceBtn.innerText = "cancel assistance"
+        cancelAssistanceBtn.classList.add("cancel-assistance-btn")
+        cancelAssistanceBtn.addEventListener("click", function (e) {cancelAssistance(this)})
+        article.append(cancelAssistanceBtn)
+      }
     }
-    
   }
 }

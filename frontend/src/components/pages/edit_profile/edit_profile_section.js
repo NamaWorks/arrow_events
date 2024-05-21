@@ -67,10 +67,32 @@ export const printEditProfileSection = async () => {
   const submitChangesBtn = document.createElement("button")
   submitChangesBtn.innerText = "save changes"
   submitChangesBtn.setAttribute("id", "save-changes-btn")
-  //! PENDING TO ADD THE FUNCTIONALITY TO UPDATE THE DATA
+  
   submitChangesBtn.addEventListener("click", (e) => {
     e.preventDefault()
     submitProfileChanges()
   } )
-  formElement.append(submitChangesBtn)
+formElement.append(submitChangesBtn)
+
+if(userJson.user.active){
+  const deactivateAccountBtn = document.createElement("button")
+  deactivateAccountBtn.setAttribute("id", "deactivate-acc-btn")
+  deactivateAccountBtn.innerText = "deactivate account"
+  // prepare event listener for this button
+  deactivateAccountBtn.addEventListener("click", (e) =>{
+    e.preventDefault()
+
+  })
+  formElement.append(deactivateAccountBtn)
+} else if (!userJson.user.active){
+  const activateAccountBtn = document.createElement("button")
+  activateAccountBtn.setAttribute("id", "activate-acc-btn")
+  activateAccountBtn.innerText = "activate account"
+  // prepare event listener for this button
+  activateAccountBtn.addEventListener("click", (e) =>{
+    e.preventDefault()
+
+  })
+  formElement.append(activateAccountBtn)
+}
 }

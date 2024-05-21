@@ -35,6 +35,7 @@ export const confirmAssistance = async (btnElement) => {
       const dataResponse = await data.json()
       // console.log(dataResponse)
       printEvents()
+      alert(`assistance confirmed`)
     }
   });
 }

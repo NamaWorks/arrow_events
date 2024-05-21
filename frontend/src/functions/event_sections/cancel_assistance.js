@@ -36,8 +36,9 @@ export const cancelAssistance = async (btnElement) => {
       });
 
       const dataResponse = await data.json();
-      console.log(dataResponse)
+      // console.log(dataResponse)
       printEvents();
+      alert(`assistance canceled`)
     }
   });
 };
