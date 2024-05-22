@@ -11,6 +11,6 @@ userRouter.get("/:id", getUserById)
 userRouter.post("/new", upload.single('profilePicture'), userSignUp)
 userRouter.post("/login", userLogin)
 userRouter.put("/update/:id", [isAuth], upload.single('profilePicture'), updateUser)
-userRouter.delete("/remove/:id", [isAdmin], deleteUser)
+userRouter.delete("/remove/:id", [isAuth], deleteUser)
 
 module.exports = userRouter

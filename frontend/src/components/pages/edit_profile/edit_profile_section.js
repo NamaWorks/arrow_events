@@ -1,4 +1,5 @@
 import { api, app } from "../../../data/global_variables"
+import { deactivateAccount } from "../../../functions/edit_profile/deactivate_account"
 import { submitProfileChanges } from "../../../functions/edit_profile/edit_profile_submit"
 import { clearSections } from "../../../functions/sections/clear_sections"
 
@@ -81,7 +82,7 @@ if(userJson.user.active){
   // prepare event listener for this button
   deactivateAccountBtn.addEventListener("click", (e) =>{
     e.preventDefault()
-
+    deactivateAccount()
   })
   formElement.append(deactivateAccountBtn)
 } else if (!userJson.user.active){
