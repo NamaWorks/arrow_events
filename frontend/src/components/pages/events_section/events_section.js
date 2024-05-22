@@ -1,7 +1,9 @@
 import { data } from "../../../data/data";
 import { api, app } from "../../../data/global_variables";
+import { filterAttendingEvents } from "../../../functions/event_sections/attending_events_filter";
 import { cancelAssistance } from "../../../functions/event_sections/cancel_assistance";
 import { confirmAssistance } from "../../../functions/event_sections/confirm_assistance";
+import { filterNonAttendingEvents } from "../../../functions/event_sections/non_attending_events_filter";
 import { clearSections } from "../../../functions/sections/clear_sections";
 
 
@@ -10,9 +12,28 @@ export const printEvents = async () => {
   const eventsSection = document.createElement("section")
   eventsSection.setAttribute("id", "events_section")
   app.append(eventsSection)
+  const logedUser = JSON.parse(localStorage.getItem("user"))
   
   const res = await fetch(api+"events/all");
   const events = await res.json()
+
+  if(logedUser) {
+    const attendingEventsbtn = document.createElement("button")
+    attendingEventsbtn.innerText = "attending events"
+    attendingEventsbtn.addEventListener("click", async () => {
+      await printEvents()
+      filterAttendingEvents(logedUser.user.username)
+    })
+    eventsSection.append(attendingEventsbtn)
+    
+    const notAttendingEventsbtn = document.createElement("button")
+    notAttendingEventsbtn.innerText = "non attending events"
+    notAttendingEventsbtn.addEventListener("click", async () => {
+      await printEvents()
+      filterNonAttendingEvents(logedUser.user.username)
+    })
+    eventsSection.append(notAttendingEventsbtn)
+  }
   
   for (const event of events) {
     
@@ -77,14 +98,14 @@ export const printEvents = async () => {
       const attendantUsername = document.createElement("p")
       attendantUsername.innerText = attendant.username
       attendantLi.append(attendantUsername)
-      const attendantEmail = document.createElement("p")
-      attendantEmail.innerText = attendant.email
-      attendantLi.append(attendantEmail)
+      // const attendantEmail = document.createElement("p")
+      // attendantEmail.innerText = attendant.email
+      // attendantLi.append(attendantEmail)
     });
 
     // ---------------------------------------------
 
-    const logedUser = JSON.parse(localStorage.getItem("user"))
+    
 
     if(logedUser){
       const user = await fetch(api+"users/"+logedUser.user._id)
@@ -107,4 +128,6 @@ export const printEvents = async () => {
       }
     }
   }
+
+
 }

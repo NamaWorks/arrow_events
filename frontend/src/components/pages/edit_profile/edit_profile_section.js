@@ -85,15 +85,15 @@ if(userJson.user.active){
     deactivateAccount()
   })
   formElement.append(deactivateAccountBtn)
-} else if (!userJson.user.active){
-  const activateAccountBtn = document.createElement("button")
-  activateAccountBtn.setAttribute("id", "activate-acc-btn")
-  activateAccountBtn.innerText = "activate account"
-  // prepare event listener for this button
-  activateAccountBtn.addEventListener("click", (e) =>{
-    e.preventDefault()
+} // else if (!userJson.user.active){
+  // const activateAccountBtn = document.createElement("button")
+  // activateAccountBtn.setAttribute("id", "activate-acc-btn")
+  // activateAccountBtn.innerText = "activate account"
+  // // prepare event listener for this button
+  // activateAccountBtn.addEventListener("click", (e) =>{
+  //   e.preventDefault()
 
-  })
-  formElement.append(activateAccountBtn)
-}
+  // })
+  // formElement.append(activateAccountBtn)
+// }
 }
