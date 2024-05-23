@@ -1,0 +1,20 @@
+.ul-nav {
+  justify-content: end;
+  list-style: none;
+  display: flex;
+}
+
+.ul-nav button {
+  background-color: #ffffff00;
+  border: none;
+  text-transform: uppercase;
+  font-weight: var(--font_weight_m);
+}
+
+/* we should create a div or span before each element in order to prepare the colored square */
+.nav-li::before {
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+}
+

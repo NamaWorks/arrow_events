@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+  /* BRAND COLORS */
+  --aev_darkgrey: #373737;
+  --aev_white: #ffffff;
+  --aev_aquagreen: #86D7B8;
+  --aev_lightblue: #8FBADD;
+  --aev_lightgrey: #f1f1f1;
+  --aev_yellow: #fdd54e;
+  --aev_purple: #B287D9;
+  --aev_red: #E55051;
+
+  /* TEXTS */
+  --font_fam: "inter", monospace;
+  --font_weight_m: 500;
+
+}
+
+* {
+  font-family: "inter", monospace;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}

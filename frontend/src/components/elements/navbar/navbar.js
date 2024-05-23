@@ -1,3 +1,5 @@
+import "./navbar.css"
+
 import { data } from "../../../data/data"
 import { app } from "../../../data/global_variables"
 import { checkNavbar } from "./navbar_checker"
