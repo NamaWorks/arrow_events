@@ -18,14 +18,18 @@ export const printNavbar = () => {
   nav.append(ulNav)
 
   for (const navElement in data.navItems) {
+    const squareDiv = document.createElement("div")
+    squareDiv.classList.add("color-nav-item")
+    squareDiv.setAttribute("id", `${navElement}-color-square`)
     const li = document.createElement("li")
     li.classList.add("nav-li")
     li.setAttribute("id", `${navElement}-li`)
     const btnLi = document.createElement("button")
     btnLi.setAttribute("id", `${navElement}`)
-
+    
     btnLi.innerText = data.navItems[navElement].text
-
+    
+    li.append(squareDiv)
     li.append(btnLi)
     ulNav.append(li)
   }

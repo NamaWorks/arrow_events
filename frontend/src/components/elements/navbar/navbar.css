@@ -2,19 +2,57 @@
   justify-content: end;
   list-style: none;
   display: flex;
+  gap: 60px;
 }
 
 .ul-nav button {
   background-color: #ffffff00;
   border: none;
   text-transform: uppercase;
+  font-size: var(--font_size_m);
   font-weight: var(--font_weight_m);
 }
 
-/* we should create a div or span before each element in order to prepare the colored square */
-.nav-li::before {
-  width: 10px;
-  height: 10px;
-  background-color: blue;
+
+.nav-li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
 }
 
+.nav-li :hover {
+  cursor: pointer;
+}
+
+.color-nav-item {
+  width: var(--square_divs_wh);
+  height: var(--square_divs_wh); 
+  background-color: var(--aev_darkgrey);
+}
+
+ #events-color-square {
+  background-color: var(--aev_darkgrey);
+ }
+
+ #signup-color-square {
+  background-color: var(--aev_purple);
+ }
+
+ #login-color-square {
+  background-color: var(--aev_yellow);
+ }
+
+ #user-color-square {
+  background-color: var(--aev_yellow);
+ }
+
+ #create_event-color-square {
+  background-color: var(--aev_aquagreen);
+ }
+
+ #logout-color-square {
+  background-color: var(--aev_red);
+ }
+
+ 

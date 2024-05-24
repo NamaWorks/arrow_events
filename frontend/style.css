@@ -13,7 +13,11 @@
 
   /* TEXTS */
   --font_fam: "inter", monospace;
+  --font_size_m: 12px;
   --font_weight_m: 500;
+
+  /*  MISC ITEMS */
+  --square_divs_wh: 7.5px;
 
 }
 
