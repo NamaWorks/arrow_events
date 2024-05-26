@@ -1,0 +1,75 @@
+#create-event-title {
+  text-align: end;
+  align-self: flex-end;
+  font-weight: var(--font_weight_m);
+  background-color: var(--aev_midgrey);
+}
+ 
+#create-event-form {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden ;
+  width: 100%;
+}
+
+.create-event-form-div {
+  display: flex;
+  width: 100%;
+}
+
+.create-event-form-div label, #create-event-title{
+  font-size: var(--font_size_xl);
+}
+
+.create-event-form-div ::placeholder{
+  opacity: 0;
+}
+
+.create-event-form-div input {
+  background-color: transparent;
+  border: none;
+  /* width: 600px; */
+}
+
+.create-event-form-div input:focus {
+  outline: none;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+#create-event-name-div {
+  background-color: var(--aev_orange);
+}
+
+#create-event-location-div {
+  background-color: var(--aev_yellow);
+}
+
+#create-event-description-div {
+  background-color: var(--aev_aquagreen);
+}
+
+#create-event-date-div {
+  background-color: var(--aev_lightblue);
+}
+
+#create-event-capacity-div {
+  background-color: var(--aev_purple);
+}
+
+#submit-event-btn {
+  border:none;
+  background-color: var(--aev_white);
+  font-family: var(--font_fam);
+  font-size: var(--font_size_xl);
+  text-transform: uppercase;
+  align-self: flex-end;
+}

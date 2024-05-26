@@ -3,6 +3,10 @@
   list-style: none;
   display: flex;
   gap: 60px;
+  position: fixed;
+  top: 1svh;
+  right: 4svw;
+  background-color: var(--aev_lightgrey);
 }
 
 .ul-nav button {
@@ -18,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.2s;
+  gap: 0.5rem;
 }
 
 .nav-li :hover {
