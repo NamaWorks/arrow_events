@@ -15,10 +15,21 @@
 .create-event-form-div {
   display: flex;
   width: 100%;
+  align-items: flex-end;
+  justify-content: left;
+  min-height: var(--min_height_sections_forms);
+  padding: 0 0 0 var(--sections_divs_padding_left);
+}
+
+.create-event-form-div label {
+  display:flex;
+  justify-content: center;
+  line-height: var(--line_height_sections_forms);
 }
 
 .create-event-form-div label, #create-event-title{
   font-size: var(--font_size_xl);
+  /* font-size: 30px; */
 }
 
 .create-event-form-div ::placeholder{
@@ -66,10 +77,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #submit-event-btn {
+  display: flex;
+  align-items: end;
+  justify-content: end;
   border:none;
   background-color: var(--aev_white);
   font-family: var(--font_fam);
   font-size: var(--font_size_xl);
   text-transform: uppercase;
   align-self: flex-end;
+  min-height: var(--min_height_sections_forms);
+  overflow: hidden;
+}
+
+#submit-event-btn p {
+  line-height: calc(var(--line_height_sections_forms) + 0.1);
 }

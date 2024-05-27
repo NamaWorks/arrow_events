@@ -93,11 +93,15 @@ export const printCreateEventSection = () => {
   eventCapacityDiv.append(eventCapacityInput)
 
   const submitEventBtn = document.createElement("button")
-  submitEventBtn.innerText = "publish"
   submitEventBtn.setAttribute("id", "submit-event-btn")
   formElement.append(submitEventBtn)
   submitEventBtn.addEventListener("click", (e)=> {
     e.preventDefault()
     createEventSubmit()
   })
+  const submitEventBtnText = document.createElement("p")
+  submitEventBtnText.setAttribute("id", "submit-event-btn-text")
+  submitEventBtnText.innerText = "publish"
+  submitEventBtn.append(submitEventBtnText)
+
 }

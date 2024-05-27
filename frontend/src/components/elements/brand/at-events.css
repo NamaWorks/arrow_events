@@ -1,4 +1,5 @@
 h1{ 
   font-weight: var(--font_weight_m);
   font-size: var(--font_size_xl);
+  padding: 0 0 0 var(--sections_divs_padding_left);
 }

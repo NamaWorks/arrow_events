@@ -29,6 +29,11 @@
   --sections_margin: 6svh 6svh 0;
   --sections_padding: 0svw;
   --sections_heigh: 90svh;
+  --sections_divs_padding_left: 2svw;
+ 
+  /* FORMS */
+  --min_height_sections_forms: 65px;
+  --line_height_sections_forms: 0.7;
 }
 
 * {
@@ -66,4 +71,8 @@ section {
   margin: var(--sections_margin);
   padding: var(--sections_padding);
   text-transform: uppercase;
+}
+
+p, h1, h2, h3, h4, label {
+  color: var(--aev_darkgrey);
 }
