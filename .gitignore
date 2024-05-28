@@ -1,3 +1,4 @@
+.gitignore
 *.env
 *.txt
 requirements.md

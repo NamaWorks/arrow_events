@@ -1,3 +1,4 @@
+import "../../elements/forms/forms.css"
 import "./create_event.css"
 import { app } from "../../../data/global_variables"
 import { createEventSubmit } from "../../../functions/create_event/create_event_submit"
@@ -14,18 +15,22 @@ export const printCreateEventSection = () => {
 
   const createEventTitleDiv = document.createElement("div")
   createEventTitleDiv.setAttribute("id", "create-event-title-div")
+  createEventTitleDiv.classList.add("form-title-div")
   createEventSection.append(createEventTitleDiv)
   const createEventTitle = document.createElement("h2")
   createEventTitle.innerText = "create event"
+  createEventTitle.classList.add("form-title")
   createEventTitle.setAttribute("id", "create-event-title")
   createEventTitleDiv.append(createEventTitle)
 
   const formElement = document.createElement("form")
   formElement.setAttribute("id", "create-event-form")
+  formElement.classList.add("form-element")
   createEventSection.append(formElement)
 
   const eventNameDiv = document.createElement("div")
   eventNameDiv.classList.add("create-event-form-div")
+  eventNameDiv.classList.add("form-div")
   eventNameDiv.setAttribute("id", "create-event-name-div")
   formElement.append(eventNameDiv)
   const nameLabel = document.createElement("label")
@@ -40,6 +45,7 @@ export const printCreateEventSection = () => {
 
   const eventLocationDiv = document.createElement("div")
   eventLocationDiv.classList.add("create-event-form-div")
+  eventLocationDiv.classList.add("form-div")
   eventLocationDiv.setAttribute("id", "create-event-location-div")
   formElement.append(eventLocationDiv)
   const locationLabel = document.createElement("label")
@@ -54,6 +60,7 @@ export const printCreateEventSection = () => {
 
   const eventDescriptionDiv = document.createElement("div")
   eventDescriptionDiv.classList.add("create-event-form-div")
+  eventDescriptionDiv.classList.add("form-div")
   eventDescriptionDiv.setAttribute("id", "create-event-description-div")
   formElement.append(eventDescriptionDiv)
   const descriptionLabel = document.createElement("label")
@@ -68,6 +75,7 @@ export const printCreateEventSection = () => {
 
   const eventDateDiv = document.createElement("div")
   eventDateDiv.classList.add("create-event-form-div")
+  eventDateDiv.classList.add("form-div")
   eventDateDiv.setAttribute("id","create-event-date-div")
   formElement.append(eventDateDiv)
   const dateLabel = document.createElement("label")
@@ -81,6 +89,7 @@ export const printCreateEventSection = () => {
 
   const eventCapacityDiv = document.createElement("div")
   eventCapacityDiv.classList.add("create-event-form-div")
+  eventCapacityDiv.classList.add("form-div")
   eventCapacityDiv.setAttribute("id", "create-event-capacity-div")
   formElement.append(eventCapacityDiv)
   const capacityLabel = document.createElement("label")
@@ -95,6 +104,7 @@ export const printCreateEventSection = () => {
 
   const submitEventBtn = document.createElement("button")
   submitEventBtn.setAttribute("id", "submit-event-btn")
+  submitEventBtn.classList.add("submit-btn")
   formElement.append(submitEventBtn)
   submitEventBtn.addEventListener("click", (e)=> {
     e.preventDefault()
