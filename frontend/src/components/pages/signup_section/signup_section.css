@@ -1,0 +1,19 @@
+#submit-signup-btn {
+  background-color: var(--aev_white);
+}
+
+#signup-password-div {
+  background-color: var(--aev_lightblue);
+}
+
+#signup-username-div {
+  background-color: var(--aev_orange);
+}
+
+#signup-email-div{
+  background-color: var(--aev_aquagreen);
+}
+
+#signup-title-div{
+  background-color: var(--aev_lightgrey);
+}
