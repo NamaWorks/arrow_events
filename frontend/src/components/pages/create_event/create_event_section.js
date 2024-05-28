@@ -90,6 +90,7 @@ export const printCreateEventSection = () => {
   const eventCapacityInput = document.createElement("input")
   eventCapacityInput.setAttribute("type", "number")
   eventCapacityInput.setAttribute("id", "event-capacity-input")
+  eventCapacityInput.setAttribute("placeholder", "capacity")
   eventCapacityDiv.append(eventCapacityInput)
 
   const submitEventBtn = document.createElement("button")

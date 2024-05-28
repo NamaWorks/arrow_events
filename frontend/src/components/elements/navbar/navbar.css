@@ -4,8 +4,8 @@
   display: flex;
   gap: 60px;
   position: fixed;
-  top: 1svh;
-  right: 4svw;
+  top: 20px;
+  right: 40px;
   background-color: var(--aev_lightgrey);
 }
 

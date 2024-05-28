@@ -2,7 +2,8 @@
   text-align: end;
   align-self: flex-end;
   font-weight: var(--font_weight_m);
-  background-color: var(--aev_midgrey);
+  position: relative;
+  bottom: var(--text_form_bottom);
 }
  
 #create-event-form {
@@ -25,6 +26,11 @@
   display:flex;
   justify-content: center;
   line-height: var(--line_height_sections_forms);
+  /* display: none; */
+}
+
+#create-event-title-div{
+  background-color: var(--aev_midgrey);
 }
 
 .create-event-form-div label, #create-event-title{
@@ -33,13 +39,23 @@
 }
 
 .create-event-form-div ::placeholder{
-  opacity: 0;
+  opacity: .5;
+  color: var(--aev_darkgrey);
+  font-weight: var(--font_weight_xs);
 }
 
 .create-event-form-div input {
   background-color: transparent;
+  font-size: var(--font_size_xl);
+  font-weight: var(--font_weight_xs);
+  color: var(--aev_darkgrey);
+  text-transform: uppercase;
+  /* line-height: var(--line_height_sections_forms); */
   border: none;
-  /* width: 600px; */
+  padding: 0 0 0 var(--sections_divs_padding_left);
+  overflow: hidden;
+  position: relative;
+  bottom: var(--text_form_bottom);
 }
 
 .create-event-form-div input:focus {
@@ -51,9 +67,16 @@ input[type="number"] {
      -moz-appearance: textfield;
           appearance: textfield;
 }
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
 }
 
 #create-event-name-div {
