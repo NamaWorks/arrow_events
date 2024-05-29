@@ -13,8 +13,8 @@
   height: var(--user_section_image_width);
   overflow: hidden;
   border-radius: 100%;
-  border: 3px solid var(--aev_darkgrey);
-  margin: var(--sections_divs_padding_left)
+  border: 3px solid var(--aev_lightgrey);
+  margin: var(--sections_divs_padding_left);
 }
 
 .user-image-div img {
@@ -31,8 +31,8 @@
   border: none;
   background-color: var(--aev_lightgrey);
   color: var(--aev_darkgrey);
-  margin:0  var(--sections_divs_padding_left);
-  padding: 0.5rem;
+  margin: 0  var(--sections_divs_padding_left) var(--sections_divs_padding_left);
+  padding: 0.5rem ;
 }
 
 h4{
@@ -40,9 +40,12 @@ h4{
   font-weight: var(--font_weight_m);
 }
 
-#attending-events-div {
-  display: flex;
-  flex-direction: column;
+#user-username {
+  background-color: var(--aev_lightgrey);
+}
+
+#user-email {
+  background-color: var(--aev_lightblue);
 }
 
 .list-toggle {
@@ -52,4 +55,47 @@ h4{
 
 .list-toggle img {
   cursor: pointer;
+  z-index: 1;
+  rotate: 0deg;
+}
+.rotate {
+  rotate: 90deg;
+  transition: var(--main_transition);
+}
+.no-rotate {
+  rotate: 0deg;
+  transition: var(--main_transition);
+}
+
+#attending-events-toggle {
+  background-color: var(--aev_red) ;
+}
+
+#attending-events-div{
+  width: 75svw;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  max-height: 150px;
+  height: 0px;
+  transition: var(--main_transition);
+  overflow: hidden;
+  position: relative;
+  right:  var(--sections_divs_padding_left);
+  padding-left: 25svw  ;
+}
+
+#attending-events-div p {
+  font-size: var(--font_size_l);
+}
+
+#attending-events-div p::before {
+  content: "—";
+  color: var(--aev_red);
+}
+
+#attending-events-div.visible {
+  overflow: scroll;
+  height: 150px;
 }

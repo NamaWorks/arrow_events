@@ -17,6 +17,7 @@
   /* TEXTS */
   --font_fam: "JetBrains Mono" ,"inter", monospace;
   --font_size_m: 12px;
+  --font_size_l: 25px;
   --font_size_xl: 50px;
   --font_weight_xs: 100;
   --font_weight_m: 400;
@@ -43,6 +44,9 @@
 
   /* IMAGES */
   --user_section_image_width: 220px;
+
+  /* TRANSITIONS */
+  --main_transition: 0.45s cubic-bezier(.5,-0.01,0,1.01);
 }
 
 * {
@@ -85,3 +89,25 @@ section {
 p, h1, h2, h3, h4, label {
   color: var(--aev_darkgrey);
 }
+
+ /* width */
+ ::-webkit-scrollbar {
+   height: 0px;
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--aev_lightgrey);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--aev_red);
+  transition: var(--main_transition)
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--aev_yellow);
+} 

@@ -1,3 +1,4 @@
 export function willAssistToggle () {
- console.log(this) 
+ const attendingEventsDiv = document.querySelector("#attending-events-div")
+ attendingEventsDiv.classList.toggle("visible")
 }

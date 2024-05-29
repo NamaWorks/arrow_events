@@ -1,10 +1,12 @@
 import "./user_section.css"
+import "../../elements/buttons/std_buttons.css"
 
 import { api, app } from "../../../data/global_variables";
 import { clearSections } from "../../../functions/sections/clear_sections";
 import { printEditProfileSection } from "../edit_profile/edit_profile_section";
 import { printIcon } from "../../elements/brand/icons";
 import { willAssistToggle } from "../../../functions/user_page/will_assist_toggle";
+import { printEvents } from "../events_section/events_section";
 
 export const printLogedUserSection = async () => {
   clearSections()
@@ -34,6 +36,7 @@ export const printLogedUserSection = async () => {
   
   const img = document.createElement("img")
   img.setAttribute("src" , profilePicture)
+  
   profilePictureDiv.append(img)
 
   const editProfileBtn = document.createElement("button")
@@ -44,9 +47,11 @@ export const printLogedUserSection = async () => {
 
   const userUsername = document.createElement("h4")
   userUsername.innerText = username
+  userUsername.setAttribute("id", "user-username")
   logedUserSection.append(userUsername)
 
   const userEmail = document.createElement("h4")
+  userEmail.setAttribute("id", "user-email")
   userEmail.innerText = email
   logedUserSection.append(userEmail)
 
@@ -65,24 +70,37 @@ export const printLogedUserSection = async () => {
 
   const attendingEventsToggle = document.createElement("div")
   attendingEventsToggle.classList.add("list-toggle")
+  attendingEventsToggle.setAttribute("id", "attending-events-toggle")
   logedUserSection.append(attendingEventsToggle)
+
   
   const attendingEventsTitle = document.createElement("h4")
   attendingEventsTitle.innerText = "will assist to"
   attendingEventsToggle.append(attendingEventsTitle)
   const arrow = printIcon("https://res.cloudinary.com/dgrhbsilh/image/upload/v1716960281/14_RTC_P10_be-to-fe-js/icons/arrow_hfuzjx.png")
+  arrow.classList.add("no-rotate")
   attendingEventsToggle.append(arrow)
 
-  arrow.addEventListener("click", willAssistToggle)
-  
+  arrow.addEventListener("click", ()=> {
+    arrow.classList.toggle("no-rotate")
+    arrow.classList.toggle("rotate")
+    willAssistToggle()
+  })
   
   const attendingEventsDiv = document.createElement("div")
   attendingEventsDiv.setAttribute("id", "attending-events-div")
   logedUserSection.append(attendingEventsDiv)
-
+  
   attendingEvents.forEach(attendingEvent => {
     const attendingEventElement = document.createElement("p")
     attendingEventElement.innerText = attendingEvent.title
     attendingEventsDiv.append(attendingEventElement)
   })
+
+  const backToEventsBtn = document.createElement("button")
+  backToEventsBtn.setAttribute("id", "back-to-events-btn")
+  backToEventsBtn.innerText = "back to events"
+  backToEventsBtn.classList.add("std-btn")
+  backToEventsBtn.addEventListener("click", printEvents)
+  logedUserSection.append(backToEventsBtn)
 }
