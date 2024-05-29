@@ -72,6 +72,7 @@
   min-height: var(--min_height_sections_forms);
   overflow: hidden;
   width: 100%;
+  gap: 1rem;
 }
 
 .submit-btn p {

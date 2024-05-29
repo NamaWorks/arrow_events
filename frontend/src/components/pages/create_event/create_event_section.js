@@ -1,9 +1,10 @@
-import "../../elements/forms/forms.css"
 import "./create_event.css"
+import "../../elements/forms/forms.css"
 import { app } from "../../../data/global_variables"
 import { createEventSubmit } from "../../../functions/create_event/create_event_submit"
 import { clearSections } from "../../../functions/sections/clear_sections"
 import { printBrand } from "../../elements/brand/at-events"
+import { printIcon } from "../../elements/brand/icons"
 
 export const printCreateEventSection = () => {
   clearSections()
@@ -114,5 +115,8 @@ export const printCreateEventSection = () => {
   submitEventBtnText.setAttribute("id", "submit-event-btn-text")
   submitEventBtnText.innerText = "publish"
   submitEventBtn.append(submitEventBtnText)
+  const arrow = printIcon("https://res.cloudinary.com/dgrhbsilh/image/upload/v1716960281/14_RTC_P10_be-to-fe-js/icons/arrow_hfuzjx.png")
+  arrow.classList.add("displaced")
+  submitEventBtn.append(arrow)
 
 }

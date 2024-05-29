@@ -1,6 +1,10 @@
+import "./user_section.css"
+
 import { api, app } from "../../../data/global_variables";
 import { clearSections } from "../../../functions/sections/clear_sections";
 import { printEditProfileSection } from "../edit_profile/edit_profile_section";
+import { printIcon } from "../../elements/brand/icons";
+import { willAssistToggle } from "../../../functions/user_page/will_assist_toggle";
 
 export const printLogedUserSection = async () => {
   clearSections()
@@ -13,7 +17,8 @@ export const printLogedUserSection = async () => {
   const userResponse = await userFetch.json()
 
   const logedUserSection = document.createElement("section")
-  logedUserSection.setAttribute("id", "loged-user-sectiown")
+  logedUserSection.classList.add("user-section")
+  logedUserSection.setAttribute("id", "loged-user-section")
   app.append(logedUserSection)
 
   const {profilePicture} = userResponse
@@ -24,15 +29,16 @@ export const printLogedUserSection = async () => {
 
   const profilePictureDiv = document.createElement("div")
   profilePictureDiv.setAttribute("id", "user-pfp-div")
+  profilePictureDiv.classList.add("user-image-div")
   logedUserSection.append(profilePictureDiv)
   
   const img = document.createElement("img")
   img.setAttribute("src" , profilePicture)
-  img.style.width = "100px" //! THIS IS A TEMP SOLUTION
   profilePictureDiv.append(img)
 
   const editProfileBtn = document.createElement("button")
   editProfileBtn.innerText = "edit profile"
+  editProfileBtn.classList.add("change-section-btn")
   editProfileBtn.addEventListener("click", printEditProfileSection)
   logedUserSection.append(editProfileBtn)
 
@@ -57,13 +63,22 @@ export const printLogedUserSection = async () => {
     })
   });
 
+  const attendingEventsToggle = document.createElement("div")
+  attendingEventsToggle.classList.add("list-toggle")
+  logedUserSection.append(attendingEventsToggle)
+  
+  const attendingEventsTitle = document.createElement("h4")
+  attendingEventsTitle.innerText = "will assist to"
+  attendingEventsToggle.append(attendingEventsTitle)
+  const arrow = printIcon("https://res.cloudinary.com/dgrhbsilh/image/upload/v1716960281/14_RTC_P10_be-to-fe-js/icons/arrow_hfuzjx.png")
+  attendingEventsToggle.append(arrow)
+
+  arrow.addEventListener("click", willAssistToggle)
+  
+  
   const attendingEventsDiv = document.createElement("div")
   attendingEventsDiv.setAttribute("id", "attending-events-div")
   logedUserSection.append(attendingEventsDiv)
-
-  const attendingEventsTitle = document.createElement("h4")
-  attendingEventsTitle.innerText = "will assist to:"
-  attendingEventsDiv.append(attendingEventsTitle)
 
   attendingEvents.forEach(attendingEvent => {
     const attendingEventElement = document.createElement("p")

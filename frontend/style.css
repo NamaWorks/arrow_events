@@ -36,6 +36,13 @@
   /* FORMS */
   --min_height_sections_forms: 70px;
   --line_height_sections_forms: 0.9;
+
+  /* ICONS */
+  --icon_div_width: 2.25rem;
+  --icon_div_position_top:0.6rem;
+
+  /* IMAGES */
+  --user_section_image_width: 220px;
 }
 
 * {
@@ -64,7 +71,7 @@ body {
 }
 
 section {
-  height: var(--sections_heigh);
+  min-height: var(--sections_heigh);
   display: flex;
   flex-direction: column;
   justify-content: end;

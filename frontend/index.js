@@ -10,4 +10,4 @@ import { printSignup } from "./src/components/pages/signup_section/signup_sectio
 
 printNavbar()
 
-printSignup ()
+printLogedUserSection()

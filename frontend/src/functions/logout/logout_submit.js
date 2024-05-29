@@ -1,4 +1,5 @@
 import { printNavbar } from "../../components/elements/navbar/navbar"
+import { printEvents } from "../../components/pages/events_section/events_section"
 import { clearSections } from "../sections/clear_sections"
 
 
@@ -7,5 +8,6 @@ export const logoutSubmit = () => {
     clearSections()
     localStorage.removeItem("user")
     printNavbar()
+    printEvents()
   }
 }
