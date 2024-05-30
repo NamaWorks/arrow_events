@@ -46,7 +46,7 @@
   --user_section_image_width: 220px;
 
   /* TRANSITIONS */
-  --main_transition: 0.45s cubic-bezier(.5,-0.01,0,1.01);
+  --main_transition: 0.45s cubic-bezier(.34,.11,0,1.01);
 }
 
 * {
@@ -83,11 +83,18 @@ section {
   background-color: var(--aev_white);
   margin: var(--sections_margin);
   padding: var(--sections_padding);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 p, h1, h2, h3, h4, label {
   color: var(--aev_darkgrey);
+}
+h1, h2, h3, h4, label {
+  color: var(--aev_darkgrey);
+  text-transform: uppercase;
+}
+button{
+  text-transform: uppercase;
 }
 
  /* width */

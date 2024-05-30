@@ -1,3 +1,8 @@
+// import "../../elements/buttons/std_buttons.css"
+// import "../user_page/user_section.css"
+// import "../../elements/forms/forms.css"
+import "./edit_profile_section.css"
+
 import { api, app } from "../../../data/global_variables"
 import { deactivateAccount } from "../../../functions/edit_profile/deactivate_account"
 import { submitProfileChanges } from "../../../functions/edit_profile/edit_profile_submit"
@@ -16,6 +21,7 @@ export const printEditProfileSection = async () => {
 
   const editProfileSection = document.createElement("section")
   editProfileSection.setAttribute("id", "loged-user-sectiown")
+  editProfileSection.classList.add("user-section")
   app.append(editProfileSection)
 
   const {profilePicture} = userResponse
@@ -28,58 +34,70 @@ export const printEditProfileSection = async () => {
 
   const profilePictureDiv = document.createElement("div")
   profilePictureDiv.setAttribute("id", "user-pfp-div")
+  profilePictureDiv.classList.add("user-image-div")
   formElement.append(profilePictureDiv)
-  
+
   const img = document.createElement("img")
   img.setAttribute("src" , profilePicture)
-  img.style.width = "100px" //! THIS IS A TEMP SOLUTION
   profilePictureDiv.append(img)
 
+  const changePfpDiv = document.createElement("div")
+  changePfpDiv.classList.add("form-div")
+  formElement.append(changePfpDiv)
   const changeProfilePictureLabel = document.createElement("label")
   changeProfilePictureLabel.setAttribute("for", "change-pfp-input")
   changeProfilePictureLabel.innerText = "change profile picture"
-  formElement.append(changeProfilePictureLabel)
+  changePfpDiv.append(changeProfilePictureLabel)
   const changeProfilePictureInput = document.createElement("input")
   changeProfilePictureInput.setAttribute("id", "change-pfp-input")
   changeProfilePictureInput.setAttribute("type", "file")
   changeProfilePictureInput.setAttribute("accept", "image/png, image/jpg")
-  formElement.append(changeProfilePictureInput)
+  changePfpDiv.append(changeProfilePictureInput)
 
+  const usernameDiv = document.createElement("div")
+  usernameDiv.classList.add("form-div")
+  formElement.append(usernameDiv)
   const changeUsernameLabel = document.createElement("label")
-  changeUsernameLabel.setAttribute("for", "change-username-inpput")
+  changeUsernameLabel.setAttribute("for", "change-username-inpput") 
   changeUsernameLabel.innerText = "change username"
-  formElement.append(changeUsernameLabel)
+  usernameDiv.append(changeUsernameLabel)
   const changeUsernameInput = document.createElement("input")
   changeUsernameInput.setAttribute("type", "text")
   changeUsernameInput.setAttribute("id","change-username-input")
   changeUsernameInput.setAttribute("placeholder", "new username")
-  formElement.append(changeUsernameInput)
+  usernameDiv.append(changeUsernameInput)
   
+  const passwordDiv = document.createElement("div")
+  passwordDiv.classList.add("form-div")
+  formElement.append(passwordDiv)
   const changePasswordLabel = document.createElement("label")
   changePasswordLabel.setAttribute("for", "change-password-input")
   changePasswordLabel.innerText = "change password"
-  formElement.append(changePasswordLabel)
+  passwordDiv.append(changePasswordLabel)
   const changePasswordInput = document.createElement("input")
   changePasswordInput.setAttribute("type", "text")
   changePasswordInput.setAttribute("id", "change-password-input")
   changePasswordInput.setAttribute("placeholder", "change password")
-  formElement.append(changePasswordInput)
+  passwordDiv.append(changePasswordInput)
 
   const submitChangesBtn = document.createElement("button")
-  submitChangesBtn.innerText = "save changes"
   submitChangesBtn.setAttribute("id", "save-changes-btn")
+  submitChangesBtn.classList.add("std-btn")
   
   submitChangesBtn.addEventListener("click", (e) => {
     e.preventDefault()
     submitProfileChanges()
   } )
 formElement.append(submitChangesBtn)
+const submitChangesBtnText = document.createElement("p")
+submitChangesBtnText.innerText = "submit changes"
+submitChangesBtn.append(submitChangesBtnText)
 
 if(userJson.user.active){
   const deactivateAccountBtn = document.createElement("button")
   deactivateAccountBtn.setAttribute("id", "deactivate-acc-btn")
   deactivateAccountBtn.innerText = "deactivate account"
-  // prepare event listener for this button
+  deactivateAccountBtn.classList.add("std-btn")
   deactivateAccountBtn.addEventListener("click", (e) =>{
     e.preventDefault()
     deactivateAccount()

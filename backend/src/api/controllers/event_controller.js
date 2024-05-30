@@ -17,6 +17,7 @@ const postEvent = async (req, res, next) => {
     const eventSaved = await newEvent.save()
     return res.status(201).json(eventSaved)
   } catch (err) {
+    console.log(err)
     return res.status(400).json(`error at postEvent: ${err} // ${req.body}`)
   }
 }

@@ -47,7 +47,7 @@
   font-size: var(--font_size_xl);
   font-weight: var(--font_weight_xs);
   color: var(--aev_darkgrey);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   /* line-height: var(--line_height_sections_forms); */
   border: none;
   padding: 0 0 0 var(--sections_divs_padding_left);

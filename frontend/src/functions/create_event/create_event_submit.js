@@ -6,6 +6,7 @@ export const createEventSubmit = async () => {
   const eventName = document.querySelector("#event-name-input").value
   const eventLocation = document.querySelector("#event-location-input").value
   const eventDate = document.querySelector("#event-date-input").value
+  console.log(eventDate)
   const eventDescription = document.querySelector("#event-description-input").value
   const eventCapacity = document.querySelector("#event-capacity-input").value
   const data = await fetch(api+"events/new", {

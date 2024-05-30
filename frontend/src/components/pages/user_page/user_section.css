@@ -38,6 +38,7 @@
 h4{
   font-size: var(--font_size_xl);
   font-weight: var(--font_weight_m);
+  text-transform: none;
 }
 
 #user-username {
@@ -69,6 +70,10 @@ h4{
 
 #attending-events-toggle {
   background-color: var(--aev_red) ;
+}
+
+#attending-events-toggle h4{
+  text-transform: uppercase
 }
 
 #attending-events-div{

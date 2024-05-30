@@ -1,4 +1,3 @@
-import { data } from "../../../data/data";
 import { api, app } from "../../../data/global_variables";
 import { filterAttendingEvents } from "../../../functions/event_sections/attending_events_filter";
 import { cancelAssistance } from "../../../functions/event_sections/cancel_assistance";
