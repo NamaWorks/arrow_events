@@ -5,11 +5,55 @@
 .event-title {
   text-transform: none;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   font-size: var(--font_size_xl);
   font-weight: var(--font_weight_m);
 }
 
 .event-info {
   display: flex;
+  flex-direction: column;
+}
+
+.attendants-title {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.attendants-title .icon-div {
+  width: 0.8rem;
+  rotate: 90deg;
+  position: relative;
+  bottom: 1px
+}
+
+.attendants-list {
+  height: 0px;
+  overflow: scroll;
+  transition: var(--main_transition) ;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+}
+.attendants-list >li > p{
+  color: var(--aev_midgrey);
+}
+.attendants-seen {
+  height: 40svh;
+}
+
+.icon-div{
+  cursor: pointer
+}
+.event{
+  height: 10svh;
+  overflow: hidden;
+  transition: var(--main_transition);
+}
+.event-seen {
+  height: 100svh;
+}
+
+#brand-id {
+  margin-top: 20svh;
 }

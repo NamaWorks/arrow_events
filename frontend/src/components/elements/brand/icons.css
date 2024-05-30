@@ -3,6 +3,8 @@
   display: flex;
   align-self: center;
   position: relative;
+  /* transition: var(--main_transition); */
+  /* cursor: pointer; */
 }
 
 .displaced{
@@ -12,6 +14,15 @@
   align-self: center;
   position: relative;
   top: var(--icon_div_position_top);
+}
+
+.rotate {
+  rotate: 90deg;
+  transition: var(--main_transition);
+}
+.no-rotate {
+  rotate: 0deg;
+  transition: var(--main_transition);
 }
 
 .icon{

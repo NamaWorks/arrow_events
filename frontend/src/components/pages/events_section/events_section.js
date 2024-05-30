@@ -1,3 +1,4 @@
+import "../../elements/brand/icons.css"
 import "../../elements/buttons/std_buttons.css"
 import "./events_section.css"
 
@@ -8,6 +9,9 @@ import { confirmAssistance } from "../../../functions/event_sections/confirm_ass
 import { filterNonAttendingEvents } from "../../../functions/event_sections/non_attending_events_filter";
 import { clearSections } from "../../../functions/sections/clear_sections";
 import { printIcon } from "../../elements/brand/icons";
+import { attendantToggle } from "../../../functions/event_sections/attendants_toggle";
+import { eventToggle } from "../../../functions/event_sections/event_toggle";
+import { printBrand } from "../../elements/brand/at-events";
 
 
 export const printEvents = async () => {
@@ -19,6 +23,8 @@ export const printEvents = async () => {
   
   const res = await fetch(api+"events/all");
   const events = await res.json()
+
+  printBrand()
 
   if(logedUser) {
     const attendingEventsbtn = document.createElement("button")
@@ -61,6 +67,8 @@ export const printEvents = async () => {
 
     eventTitleDiv.append(arrow)
 
+    arrow.addEventListener("click", function (e) {eventToggle(this)})
+
     // --------------------------------------------
 
     const eventInfoDiv = document.createElement("div")
@@ -91,9 +99,19 @@ export const printEvents = async () => {
     eventAttendantsDiv.classList.add("event-attendants")
     eventInfoDiv.append(eventAttendantsDiv)
 
+    const eventAttendantsClickDiv = document.createElement("div")
+    eventAttendantsClickDiv.classList.add("attendants-title")
+    eventAttendantsDiv.append(eventAttendantsClickDiv)
+
     const eventAttendantsTitle = document.createElement("h4")
-    eventAttendantsTitle.innerText = "Attendants: "
-    eventAttendantsDiv.append(eventAttendantsTitle)
+    eventAttendantsTitle.innerText = "Attendants"
+    eventAttendantsClickDiv.append(eventAttendantsTitle)
+    const arrowAttendants =  printIcon("https://res.cloudinary.com/dgrhbsilh/image/upload/v1716960281/14_RTC_P10_be-to-fe-js/icons/arrow_hfuzjx.png")
+    eventAttendantsClickDiv.append(arrowAttendants)
+    arrowAttendants.classList.add("no-rotate")
+    arrowAttendants.addEventListener("click", function (e) {
+      attendantToggle(this)
+    })
 
     const attendantsListUl = document.createElement("ul")
     attendantsListUl.classList.add("attendants-list")
