@@ -1,6 +1,6 @@
-// import "../../elements/buttons/std_buttons.css"
-// import "../user_page/user_section.css"
-// import "../../elements/forms/forms.css"
+import "../../elements/buttons/std_buttons.css"
+import "../user_page/user_section.css"
+import "../../elements/forms/forms.css"
 import "./edit_profile_section.css"
 
 import { api, app } from "../../../data/global_variables"
@@ -43,6 +43,7 @@ export const printEditProfileSection = async () => {
 
   const changePfpDiv = document.createElement("div")
   changePfpDiv.classList.add("form-div")
+  changePfpDiv.setAttribute("id", "change-pfp-div")
   formElement.append(changePfpDiv)
   const changeProfilePictureLabel = document.createElement("label")
   changeProfilePictureLabel.setAttribute("for", "change-pfp-input")
@@ -56,6 +57,7 @@ export const printEditProfileSection = async () => {
 
   const usernameDiv = document.createElement("div")
   usernameDiv.classList.add("form-div")
+  usernameDiv.setAttribute("id" , "change-username-div")
   formElement.append(usernameDiv)
   const changeUsernameLabel = document.createElement("label")
   changeUsernameLabel.setAttribute("for", "change-username-inpput") 
@@ -69,6 +71,7 @@ export const printEditProfileSection = async () => {
   
   const passwordDiv = document.createElement("div")
   passwordDiv.classList.add("form-div")
+  passwordDiv.setAttribute("id", "change-password-div")
   formElement.append(passwordDiv)
   const changePasswordLabel = document.createElement("label")
   changePasswordLabel.setAttribute("for", "change-password-input")
