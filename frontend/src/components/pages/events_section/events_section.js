@@ -1,9 +1,13 @@
+import "../../elements/buttons/std_buttons.css"
+import "./events_section.css"
+
 import { api, app } from "../../../data/global_variables";
 import { filterAttendingEvents } from "../../../functions/event_sections/attending_events_filter";
 import { cancelAssistance } from "../../../functions/event_sections/cancel_assistance";
 import { confirmAssistance } from "../../../functions/event_sections/confirm_assistance";
 import { filterNonAttendingEvents } from "../../../functions/event_sections/non_attending_events_filter";
 import { clearSections } from "../../../functions/sections/clear_sections";
+import { printIcon } from "../../elements/brand/icons";
 
 
 export const printEvents = async () => {
@@ -19,6 +23,7 @@ export const printEvents = async () => {
   if(logedUser) {
     const attendingEventsbtn = document.createElement("button")
     attendingEventsbtn.innerText = "attending events"
+    attendingEventsbtn.classList.add("std-btn")
     attendingEventsbtn.addEventListener("click", async () => {
       await printEvents()
       filterAttendingEvents(logedUser.user.username)
@@ -27,6 +32,7 @@ export const printEvents = async () => {
     
     const notAttendingEventsbtn = document.createElement("button")
     notAttendingEventsbtn.innerText = "non attending events"
+    notAttendingEventsbtn.classList.add("std-btn")
     notAttendingEventsbtn.addEventListener("click", async () => {
       await printEvents()
       filterNonAttendingEvents(logedUser.user.username)
@@ -35,12 +41,12 @@ export const printEvents = async () => {
   }
   
   for (const event of events) {
-    
+    // console.log(event.title)
     const article = document.createElement("article")
     article.classList.add("event")
     eventsSection.append(article)
 
-    // --------------------------------------------
+    // -------------------------------------------;-
 
     const eventTitleDiv = document.createElement("div")
     eventTitleDiv.classList.add("event-title")
@@ -48,7 +54,12 @@ export const printEvents = async () => {
 
     const eventTitleH3 = document.createElement("h3")
     eventTitleH3.innerText = await event.title
+    eventTitleH3.classList.add("event-title")
     eventTitleDiv.append(eventTitleH3)
+
+    const arrow = printIcon("https://res.cloudinary.com/dgrhbsilh/image/upload/v1716960281/14_RTC_P10_be-to-fe-js/icons/arrow_hfuzjx.png")
+
+    eventTitleDiv.append(arrow)
 
     // --------------------------------------------
 
@@ -81,13 +92,13 @@ export const printEvents = async () => {
     eventInfoDiv.append(eventAttendantsDiv)
 
     const eventAttendantsTitle = document.createElement("h4")
-    eventAttendantsTitle.innerText = "attendants"
+    eventAttendantsTitle.innerText = "Attendants: "
     eventAttendantsDiv.append(eventAttendantsTitle)
 
     const attendantsListUl = document.createElement("ul")
     attendantsListUl.classList.add("attendants-list")
     eventAttendantsDiv.append(attendantsListUl)
-
+;
     // --------------------------------------------
 
     const eventAttendants = await event.attendants

@@ -1,0 +1,15 @@
+.event h4 {
+  text-transform: uppercase;
+  font-size: var(--font_weight_m);
+}
+.event-title {
+  text-transform: none;
+  display: flex;
+  gap: 1rem;
+  font-size: var(--font_size_xl);
+  font-weight: var(--font_weight_m);
+}
+
+.event-info {
+  display: flex;
+}

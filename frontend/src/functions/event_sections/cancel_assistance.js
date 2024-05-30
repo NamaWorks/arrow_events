@@ -5,6 +5,7 @@ export const cancelAssistance = async (btnElement) => {
   const logedUser = JSON.parse(localStorage.getItem("user"));
   const eventTitle =
     btnElement.parentElement.querySelector(".event-title").innerText;
+    console.log(eventTitle)
 
   const events = await fetch(api + "events/all");
   const eventsResponse = await events.json();
@@ -36,7 +37,7 @@ export const cancelAssistance = async (btnElement) => {
       });
 
       const dataResponse = await data.json();
-      // console.log(dataResponse)
+      console.log(dataResponse)
       printEvents();
       alert(`assistance canceled`)
     }
