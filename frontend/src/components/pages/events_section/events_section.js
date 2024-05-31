@@ -12,6 +12,7 @@ import { printIcon } from "../../elements/brand/icons";
 import { attendantToggle } from "../../../functions/event_sections/attendants_toggle";
 import { eventToggle } from "../../../functions/event_sections/event_toggle";
 import { printBrand } from "../../elements/brand/at-events";
+import { setRandomColorClass } from "../../../functions/event_sections/assign_random_color";
 
 
 export const printEvents = async () => {
@@ -51,6 +52,8 @@ export const printEvents = async () => {
     const article = document.createElement("article")
     article.classList.add("event")
     eventsSection.append(article)
+
+    setRandomColorClass(article)
 
     // -------------------------------------------;-
 

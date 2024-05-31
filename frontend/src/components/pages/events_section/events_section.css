@@ -5,8 +5,10 @@
 .event-title {
   text-transform: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   font-size: var(--font_size_xl);
+  /* font-size: var(--font_size_l); */
   font-weight: var(--font_weight_m);
 }
 
@@ -56,4 +58,26 @@
 
 #brand-id {
   margin-top: 20svh;
+}
+
+article.yellow {
+  background-color: var(--aev_yellow);
+}
+article.orange {
+  background-color: var(--aev_orange);
+}
+article.lightblue {
+  background-color: var(--aev_lightblue);
+}
+article.red {
+  background-color: var(--aev_red);
+}
+article.aquagreen {
+  background-color: var(--aev_aquagreen);
+}
+article.purple {
+  background-color: var(--aev_purple);
+}
+article.white {
+  background-color: var(--aev_white);
 }
