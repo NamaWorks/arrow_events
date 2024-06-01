@@ -26,6 +26,7 @@
   /*  MISC ITEMS */
   --square_divs_wh: 7.5px;
   --border_radius_sections: 20px 20px 0 0;
+  --borders_underline: 1px solid var(--aev_darkgrey);
 
 
   /* SPACINGS */
@@ -33,6 +34,7 @@
   --sections_padding: 0svw;
   --sections_heigh: 90svh;
   --sections_divs_padding_left: 2svw;
+  --event_margins: 2rem;
  
   /* FORMS */
   --min_height_sections_forms: 70px;

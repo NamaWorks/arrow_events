@@ -1,3 +1,18 @@
+#app {
+  background-color: transparent;
+}
+
+#events-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article {
+  /* max-width: 40%; */
+  padding: 0 var(--sections_divs_padding_left) ;
+  border-bottom: var(--borders_underline);
+}
+
 .event h4 {
   text-transform: uppercase;
   font-size: var(--font_weight_m);
@@ -5,55 +20,81 @@
 .event-title {
   text-transform: none;
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 0.5rem;
   font-size: var(--font_size_xl);
   /* font-size: var(--font_size_l); */
   font-weight: var(--font_weight_m);
+  /* margin: 0  0 var(--event_margins) ; */
 }
 
-.event-info {
+/* .event-title .position-start {
+  position: relative;
+  right: 00px;
+}
+
+.event-title .position-end {
+  position: relative;
+  right: -100px;
+} */
+
+.event .event-info {
   display: flex;
   flex-direction: column;
+  height: 0px;
+  /* margin: var(--event_margins) 0 0 0; */
+  transition: var(--main_transition);
+}
+.event-seen .event-info {
+  display: flex;
+  flex-direction: column;
+  /* margin: var(--event_margins) 0 0 0; */
+  transition: var(--main_transition);
 }
 
 .attendants-title {
+  margin: var(--event_margins) 0 0;
   display: flex;
   gap: 0.75rem;
+  border-bottom: var(--borders_underline)
 }
 
 .attendants-title .icon-div {
   width: 0.8rem;
-  rotate: 90deg;
+  /* rotate: 90deg; */
   position: relative;
-  bottom: 1px
+  bottom: 1px;
 }
 
 .attendants-list {
-  height: 0px;
   overflow: scroll;
   transition: var(--main_transition) ;
   display: flex;
   flex-direction: column;
   /* flex-wrap: wrap; */
-}
-.attendants-list >li > p{
-  color: var(--aev_midgrey);
-}
-.attendants-seen {
-  height: 40svh;
+  transition: var(--main_transition);
+  margin-left: 10%;
+  margin-bottom: var(--event_margins);
+  overflow: hidden;
 }
 
+.attendants-list li {
+  border-bottom: var(--borders_underline)
+}
+
+
 .icon-div{
-  cursor: pointer
+  cursor: pointer;
+  /* width: 1rem; */
 }
 .event{
-  height: 10svh;
+  /* height: 10svh; */
+  display: flex;
+  flex-direction: column;
+  gap: var(--sections_divs_padding_left);
   overflow: hidden;
   transition: var(--main_transition);
-}
-.event-seen {
-  height: 100svh;
 }
 
 #brand-id {
@@ -80,4 +121,8 @@ article.purple {
 }
 article.white {
   background-color: var(--aev_white);
+}
+article button {
+  max-width: 50svw;
+  background-color: transparent;
 }

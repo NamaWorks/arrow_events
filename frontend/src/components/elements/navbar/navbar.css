@@ -1,11 +1,16 @@
+nav {
+  z-index: 999;
+}
+
 .ul-nav {
+  padding: 5px 10px;
   justify-content: end;
   list-style: none;
   display: flex;
   gap: 60px;
   position: fixed;
   top: 20px;
-  right: 40px;
+  right: 30px;
   background-color: var(--aev_lightgrey);
 }
 

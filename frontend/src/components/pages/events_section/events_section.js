@@ -70,6 +70,8 @@ export const printEvents = async () => {
 
     eventTitleDiv.append(arrow)
 
+    arrow.classList.add("no-rotate")
+    arrow.classList.add("position-start")
     arrow.addEventListener("click", function (e) {eventToggle(this)})
 
     // --------------------------------------------
@@ -95,6 +97,7 @@ export const printEvents = async () => {
     eventDescription.innerText = await event.description
 
     eventInfoData.append(eventDate, eventLocation, eventCapacity, eventDescription)
+    eventInfoDiv.style.height = "0px"
 
     // --------------------------------------------
 
@@ -112,12 +115,13 @@ export const printEvents = async () => {
     const arrowAttendants =  printIcon("https://res.cloudinary.com/dgrhbsilh/image/upload/v1716960281/14_RTC_P10_be-to-fe-js/icons/arrow_hfuzjx.png")
     eventAttendantsClickDiv.append(arrowAttendants)
     arrowAttendants.classList.add("no-rotate")
-    arrowAttendants.addEventListener("click", function (e) {
-      attendantToggle(this)
-    })
+    // arrowAttendants.addEventListener("click", function (e) {
+    //   attendantToggle(this)
+    // })
 
     const attendantsListUl = document.createElement("ul")
     attendantsListUl.classList.add("attendants-list")
+    // attendantsListUl.style.height = "0px"
     eventAttendantsDiv.append(attendantsListUl)
 ;
     // --------------------------------------------
@@ -149,13 +153,15 @@ export const printEvents = async () => {
         confirmAssistanceBtn.innerText = "confirm assistance"
         confirmAssistanceBtn.classList.add("confirm-assistance-btn")
         confirmAssistanceBtn.addEventListener("click", function (e) {confirmAssistance(this)})
-        article.append(confirmAssistanceBtn)
+        eventInfoDiv.append(confirmAssistanceBtn)
+        confirmAssistanceBtn.classList.add("std-btn")
       } else if(eventAttendantsByName.includes(userResponse.username)){
         const cancelAssistanceBtn = document.createElement("button")
         cancelAssistanceBtn.innerText = "cancel assistance"
         cancelAssistanceBtn.classList.add("cancel-assistance-btn")
         cancelAssistanceBtn.addEventListener("click", function (e) {cancelAssistance(this)})
-        article.append(cancelAssistanceBtn)
+        eventInfoDiv.append(cancelAssistanceBtn)
+        cancelAssistanceBtn.classList.add("std-btn")
       }
     }
   }
