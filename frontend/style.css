@@ -32,7 +32,7 @@
   /* SPACINGS */
   --sections_margin: 30px 30px 0;
   --sections_padding: 0svw;
-  --sections_heigh: 90svh;
+  --sections_heigh: 92svh;
   --sections_divs_padding_left: 2svw;
   --event_margins: 2rem;
  
@@ -83,9 +83,13 @@ section {
   justify-content: end;
   border-radius: var(--border_radius_sections);
   background-color: var(--aev_white);
-  margin: var(--sections_margin);
+  margin:  var(--sections_margin);
   padding: var(--sections_padding);
   /* text-transform: uppercase; */
+}
+
+#app {
+  padding-top: 30px;
 }
 
 p, h1, h2, h3, h4, label {

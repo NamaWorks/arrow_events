@@ -3,7 +3,9 @@ import { api } from "../../data/global_variables"
 
 export const confirmAssistance = async (btnElement) => {
   const logedUser = JSON.parse(localStorage.getItem("user"))
-  const eventTitle = btnElement.parentElement.querySelector(".event-title").innerText
+  
+  const eventTitle = btnElement.parentElement.parentElement.querySelector(".event-title").querySelector("h3").innerText
+  console.log(eventTitle)
 
   const events = await fetch(api + "events/all")
   const eventsResponse = await events.json()
