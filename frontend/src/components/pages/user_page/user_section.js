@@ -7,6 +7,7 @@ import { printEditProfileSection } from "../edit_profile/edit_profile_section";
 import { printIcon } from "../../elements/brand/icons";
 import { willAssistToggle } from "../../../functions/user_page/will_assist_toggle";
 import { printEvents } from "../events_section/events_section";
+import { introAnimation } from "../../../functions/sections/intro_animation";
 
 export const printLogedUserSection = async () => {
   clearSections()
@@ -21,7 +22,10 @@ export const printLogedUserSection = async () => {
   const logedUserSection = document.createElement("section")
   logedUserSection.classList.add("user-section")
   logedUserSection.setAttribute("id", "loged-user-section")
-  app.append(logedUserSection)
+  logedUserSection.style.top = "100svh"
+  setTimeout(() => {
+    app.append(logedUserSection)
+  }, 400);
 
   const {profilePicture} = userResponse
   const {email} = userResponse
@@ -103,4 +107,6 @@ export const printLogedUserSection = async () => {
   backToEventsBtn.classList.add("std-btn")
   backToEventsBtn.addEventListener("click", printEvents)
   logedUserSection.append(backToEventsBtn)
+
+  introAnimation(logedUserSection)
 }

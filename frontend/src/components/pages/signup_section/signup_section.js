@@ -5,14 +5,18 @@ import { app } from "../../../data/global_variables"
 import { clearSections } from "../../../functions/sections/clear_sections"
 import { signupSubmit } from "../../../functions/signup/signup_submit"
 import { printBrand } from "../../elements/brand/at-events"
+import { introAnimation } from "../../../functions/sections/intro_animation"
 
 export const printSignup = () => {
   clearSections()
   const signupSection = document.createElement("section")
   signupSection.setAttribute("id", "signup_section")
-  app.append(signupSection)
+  signupSection.style.top = "100svh"
+  setTimeout(() => {
+    printBrand()
+    app.append(signupSection)
+  }, 400);
 
-  printBrand()
 
   const signupTitleDiv = document.createElement("div")
   signupTitleDiv.classList.add("form-title-div")
@@ -84,4 +88,6 @@ export const printSignup = () => {
   const submitSignupBtnText = document.createElement("p")
   submitSignupBtnText.innerText = "sign up"
   submitSignupBtn.append(submitSignupBtnText)
+
+  introAnimation(signupSection)
 }

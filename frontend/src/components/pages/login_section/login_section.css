@@ -1,3 +1,7 @@
+#login_section {
+  display: flex;
+}
+
 #submit-login-btn {
   background-color: var(--aev_lightblue);
 }

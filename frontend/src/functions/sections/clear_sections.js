@@ -1,6 +1,8 @@
 export const clearSections = () => {
   const sections = document.querySelectorAll("section")
   sections.forEach((section) => {
-    section.remove()
+    setTimeout(() => {
+      section.remove() 
+    }, 450);
   })
 }

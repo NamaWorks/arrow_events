@@ -2,6 +2,9 @@
   background-color: var(--aev_midgrey);
 }
 
+#create_event_section {
+  display: flex;
+}
 
 input[type="number"] {
   -webkit-appearance: textfield;

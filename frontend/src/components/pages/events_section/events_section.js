@@ -13,19 +13,23 @@ import { attendantToggle } from "../../../functions/event_sections/attendants_to
 import { eventToggle } from "../../../functions/event_sections/event_toggle";
 import { printBrand } from "../../elements/brand/at-events";
 import { setRandomColorClass } from "../../../functions/event_sections/assign_random_color";
+import { introAnimation } from "../../../functions/sections/intro_animation";
 
 
 export const printEvents = async () => {
   clearSections()
   const eventsSection = document.createElement("section")
   eventsSection.setAttribute("id", "events_section")
-  app.append(eventsSection)
+  eventsSection.style.top = "100svh"
+  setTimeout(() => {
+    app.append(eventsSection)
+  }, 400);
+  printBrand()
   const logedUser = JSON.parse(localStorage.getItem("user"))
   
   const res = await fetch(api+"events/all");
   const events = await res.json()
 
-  printBrand()
 
   if(logedUser) {
     const attendingEventsbtn = document.createElement("button")
@@ -166,5 +170,7 @@ export const printEvents = async () => {
     }
   }
 
+
+  introAnimation(eventsSection)
 
 }

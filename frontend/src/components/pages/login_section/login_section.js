@@ -5,14 +5,18 @@ import { app } from "../../../data/global_variables";
 import { loginSubmit } from "../../../functions/login/login_submit";
 import { clearSections } from "../../../functions/sections/clear_sections";
 import { printBrand } from "../../elements/brand/at-events";
+import { introAnimation } from "../../../functions/sections/intro_animation";
 
 export const printLogin = () => {
   clearSections()
   const loginSection = document.createElement("section")
   loginSection.setAttribute("id", "login_section")
-  app.append(loginSection)
+  loginSection.style.top = "100svh"
+  setTimeout(() => {
+    app.append(loginSection)
+    printBrand()
+  }, 400);
 
-  printBrand()
 
   const loginTitleDiv = document.createElement("div")
   loginTitleDiv.setAttribute("id", "login-title-div")
@@ -70,4 +74,7 @@ export const printLogin = () => {
   const submitLoginBtnP = document.createElement("p")
   submitLoginBtnP.innerText = "enter"
   submitLoginBtn.append(submitLoginBtnP)
+
+
+  introAnimation(loginSection)
 }

@@ -30,7 +30,7 @@
 
 
   /* SPACINGS */
-  --sections_margin: 30px 30px 0;
+  --sections_margin: 60px 2svh 0;
   --sections_padding: 0svw;
   --sections_heigh: 92svh;
   --sections_divs_padding_left: 2svw;
@@ -48,7 +48,7 @@
   --user_section_image_width: 220px;
 
   /* TRANSITIONS */
-  --main_transition: 0.45s cubic-bezier(.34,.11,0,1.01);
+  --main_transition: 0.45s cubic-bezier(.41,-0.01,.47,.99);
 }
 
 * {
@@ -56,6 +56,7 @@
   padding: 0;
   margin: 0;
   font-family: var(--font_fam);
+  scroll-behavior: smooth;
 }
 
 html {
@@ -70,27 +71,32 @@ body {
 }
 
 #app {
-  min-height: 100svh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  /* scroll-behavior: none; */
   justify-content: flex-end;
 }
 
 section {
-  min-height: var(--sections_heigh);
-  display: flex;
+  height: var(--sections_heigh);
+  /* display: flex; */
   flex-direction: column;
   justify-content: end;
   border-radius: var(--border_radius_sections);
   background-color: var(--aev_white);
   margin:  var(--sections_margin);
-  padding: var(--sections_padding);
-  /* text-transform: uppercase; */
+  position: relative;
+  /* top: 0svh; */
+  transition: var(--main_transition);
+  overflow: scroll;
 }
 
-#app {
+/* #app {
   padding-top: 30px;
-}
+} */
 
 p, h1, h2, h3, h4, label {
   color: var(--aev_darkgrey);
@@ -106,21 +112,24 @@ button{
  /* width */
  ::-webkit-scrollbar {
    height: 0px;
-  width: 5px;
+  width: 5px; 
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: var(--aev_lightgrey);
+  border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--aev_red);
-  transition: var(--main_transition)
+  transition: var(--main_transition);
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--aev_yellow);
+  border-radius: 10px;
 } 

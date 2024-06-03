@@ -3,8 +3,7 @@
 }
 
 #events-section {
-  display: flex;
-  flex-wrap: wrap;
+  display: none;
 }
 
 article {

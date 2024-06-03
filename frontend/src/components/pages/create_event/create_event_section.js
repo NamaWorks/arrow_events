@@ -5,14 +5,18 @@ import { createEventSubmit } from "../../../functions/create_event/create_event_
 import { clearSections } from "../../../functions/sections/clear_sections"
 import { printBrand } from "../../elements/brand/at-events"
 import { printIcon } from "../../elements/brand/icons"
+import { introAnimation } from "../../../functions/sections/intro_animation"
 
 export const printCreateEventSection = () => {
-  clearSections()
+  
   const createEventSection = document.createElement("section")
   createEventSection.setAttribute("id", "create_event_section")
-  app.append(createEventSection)
+  createEventSection.style.top = "100svh"
+  setTimeout(() => {
+    app.append(createEventSection)
+    printBrand()
+  }, 400);
 
-  printBrand()
 
   const createEventTitleDiv = document.createElement("div")
   createEventTitleDiv.setAttribute("id", "create-event-title-div")
@@ -119,4 +123,5 @@ export const printCreateEventSection = () => {
   arrow.classList.add("displaced")
   submitEventBtn.append(arrow)
 
+  introAnimation(createEventSection)
 }
