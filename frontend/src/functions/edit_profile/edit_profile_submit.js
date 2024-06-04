@@ -9,26 +9,24 @@ export const submitProfileChanges = async () => {
 
   let newUsername = document.querySelector("#change-username-input").value
   let newPassword = document.querySelector("#change-password-input").value
-  let newPfp = document.querySelector("#change-pfp-input").value
+  let newPfp = document.querySelector("#change-pfp-input").files[0]
   
   if(newUsername == ""){
     newUsername = currentUsername
   }
 
-  console.log(currentPassword)
-  console.log(newPassword)
+  const formData = new FormData()
+  formData.append("username", newUsername)
+  formData.append("password", newPassword)
+  formData.append("profilePicture", newPfp)
 
   const data = await fetch(`${api}users/update/${user._id}`, {
     headers: {
-       "Content-type": "application/json",
+      //  "Content-type": "application/json",
        "Authorization": "Bearer " + token
     },
     method: "PUT",
-    body: JSON.stringify({
-      username : newUsername,
-      password : newPassword,
-      profilePicture : newPfp,
-    }),
+    body: formData
   })
 
 
@@ -38,5 +36,6 @@ export const submitProfileChanges = async () => {
     logoutSubmit()
   } else {
     alert(`error at saving changes`)
+    console.log(data.message)
   }
 }

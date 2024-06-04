@@ -6,6 +6,18 @@
   background-color: var(--aev_white);
 }
 
+#signup-image-input {
+  background-color: var(--aev_yellow);
+}
+
+#signup-image-input label {
+  cursor: pointer;
+}
+
+#pfp-input {
+  display: none;
+}
+
 #signup-password-div {
   background-color: var(--aev_lightblue);
 }

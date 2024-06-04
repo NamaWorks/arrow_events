@@ -65,7 +65,7 @@ export const printEditProfileSection = async () => {
   usernameDiv.setAttribute("id" , "change-username-div")
   formElement.append(usernameDiv)
   const changeUsernameLabel = document.createElement("label")
-  changeUsernameLabel.setAttribute("for", "change-username-inpput") 
+  changeUsernameLabel.setAttribute("for", "change-username-input") 
   changeUsernameLabel.innerText = "change username"
   usernameDiv.append(changeUsernameLabel)
   const changeUsernameInput = document.createElement("input")

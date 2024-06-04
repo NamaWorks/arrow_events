@@ -38,10 +38,14 @@ export const printSignup = () => {
   pfpDiv.setAttribute("id", "signup-image-input")
   formElement.append(pfpDiv)
   const pfpLabel = document.createElement("label")
-  pfpLabel.setAttribute("for", "signup-image-input")
+  pfpLabel.setAttribute("for", "pfp-input")
   pfpLabel.innerText = "profile picture"
   pfpDiv.append(pfpLabel)
-  
+  const pfpInput = document.createElement("input")
+  pfpInput.setAttribute("id", "pfp-input")
+  pfpInput.setAttribute("type", "file")  
+  pfpInput.setAttribute("accept", "image/png, image/jpg")
+  pfpDiv.append(pfpInput)
 
   const usernameDiv = document.createElement("div")
   usernameDiv.classList.add("form-div")

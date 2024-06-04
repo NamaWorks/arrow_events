@@ -6,19 +6,23 @@ export const signupSubmit = async () => {
   const username = document.querySelector("#signup-username-input").value;
   const password = document.querySelector("#signup-password-input").value;
   const email = document.querySelector("#signup-email-input").value;
-  // const profilePicture = document
+  // En el caso de la imagen, tendremos que usar otra clave del nodo, ya que value nos dará un fakepath
+  const profilePicture = document.querySelector("#pfp-input").files[0]
+
+  const formData = new FormData()
+  formData.append("username",username)
+  formData.append("password", password)
+  formData.append("email", email)
+  formData.append("profilePicture", profilePicture)
   const data = await fetch(api+"users/new", {
-    headers: {
-      "Content-type": "application/json",
-    },
+    // headers: {
+    //   "Content-type": "multipart/form-data",
+    // },
     method: "POST",
-    body: JSON.stringify({
-      username: username,
-      password: password,
-      email: email,
-    }),
+    body: formData
   });
   const dataResponse = await data.json();
+  console.log(dataResponse)
 
   if(data.status == 201){
     const currentSection = document.querySelector("section")
