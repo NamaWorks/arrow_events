@@ -9,7 +9,7 @@ import { confirmAssistance } from "../../../functions/event_sections/confirm_ass
 import { filterNonAttendingEvents } from "../../../functions/event_sections/non_attending_events_filter";
 import { clearSections } from "../../../functions/sections/clear_sections";
 import { printIcon } from "../../elements/brand/icons";
-import { attendantToggle } from "../../../functions/event_sections/attendants_toggle";
+// import { attendantToggle } from "../../../functions/event_sections/attendants_toggle";
 import { eventToggle } from "../../../functions/event_sections/event_toggle";
 import { printBrand } from "../../elements/brand/at-events";
 import { setRandomColorClass } from "../../../functions/event_sections/assign_random_color";
@@ -36,7 +36,7 @@ export const printEvents = async () => {
     attendingEventsbtn.innerText = "attending events"
     attendingEventsbtn.classList.add("std-btn")
     attendingEventsbtn.addEventListener("click", async () => {
-      await printEvents()
+      // await printEvents()
       filterAttendingEvents(logedUser.user.username)
     })
     eventsSection.append(attendingEventsbtn)
@@ -45,7 +45,7 @@ export const printEvents = async () => {
     notAttendingEventsbtn.innerText = "non attending events"
     notAttendingEventsbtn.classList.add("std-btn")
     notAttendingEventsbtn.addEventListener("click", async () => {
-      await printEvents()
+      // await printEvents()
       filterNonAttendingEvents(logedUser.user.username)
     })
     eventsSection.append(notAttendingEventsbtn)

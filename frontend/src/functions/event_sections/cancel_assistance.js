@@ -1,5 +1,6 @@
 import { printEvents } from "../../components/pages/events_section/events_section"
 import { api } from "../../data/global_variables"
+import { introAnimation, outroAnimation } from "../sections/intro_animation";
 
 export const cancelAssistance = async (btnElement) => {
   const logedUser = JSON.parse(localStorage.getItem("user"));
@@ -37,8 +38,15 @@ export const cancelAssistance = async (btnElement) => {
       });
 
       const dataResponse = await data.json();
-      printEvents();
-      alert(`assistance canceled`)
+
+      const section = document.querySelector("section")
+      outroAnimation(section)
+      setTimeout(() => {
+        printEvents();      
+      }, 450);
+      const sectionNew = document.querySelector("section")
+      introAnimation(sectionNew)
+      // alert(`assistance canceled`)
     }
   });
 };

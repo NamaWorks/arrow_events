@@ -7,7 +7,7 @@ import { printEditProfileSection } from "../edit_profile/edit_profile_section";
 import { printIcon } from "../../elements/brand/icons";
 import { willAssistToggle } from "../../../functions/user_page/will_assist_toggle";
 import { printEvents } from "../events_section/events_section";
-import { introAnimation } from "../../../functions/sections/intro_animation";
+import { introAnimation, outroAnimation } from "../../../functions/sections/intro_animation";
 
 export const printLogedUserSection = async () => {
   clearSections()
@@ -46,7 +46,13 @@ export const printLogedUserSection = async () => {
   const editProfileBtn = document.createElement("button")
   editProfileBtn.innerText = "edit profile"
   editProfileBtn.classList.add("change-section-btn")
-  editProfileBtn.addEventListener("click", printEditProfileSection)
+  editProfileBtn.addEventListener("click", function () {
+    const currentSection = document.querySelector("section")
+    outroAnimation(currentSection)
+    setTimeout(() => {
+      printEditProfileSection()
+    }, 450);
+  })
   logedUserSection.append(editProfileBtn)
 
   const userUsername = document.createElement("h4")

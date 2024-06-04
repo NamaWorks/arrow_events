@@ -11,3 +11,9 @@ export function outroAnimation (section) {
     clearSections()
   }, 0);
 }
+
+export function outroAnimationNoClean (section) {
+  setTimeout(() => {
+    section.style.top = "100svh"
+  }, 0);
+}

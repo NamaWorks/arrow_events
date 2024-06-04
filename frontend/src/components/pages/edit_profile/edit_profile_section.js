@@ -7,6 +7,7 @@ import { api, app } from "../../../data/global_variables"
 import { deactivateAccount } from "../../../functions/edit_profile/deactivate_account"
 import { submitProfileChanges } from "../../../functions/edit_profile/edit_profile_submit"
 import { clearSections } from "../../../functions/sections/clear_sections"
+import { introAnimation } from "../../../functions/sections/intro_animation"
 
 export const printEditProfileSection = async () => {
   clearSections()
@@ -22,7 +23,11 @@ export const printEditProfileSection = async () => {
   const editProfileSection = document.createElement("section")
   editProfileSection.setAttribute("id", "loged-user-sectiown")
   editProfileSection.classList.add("user-section")
-  app.append(editProfileSection)
+  editProfileSection.style.top = "100svh"
+
+  setTimeout(() => {
+    app.append(editProfileSection)
+  }, 400);
 
   const {profilePicture} = userResponse
   const {email} = userResponse
@@ -117,4 +122,6 @@ if(userJson.user.active){
   // })
   // formElement.append(activateAccountBtn)
 // }
+
+introAnimation(editProfileSection)
 }
