@@ -1,6 +1,7 @@
 import { printNavbar } from "../../components/elements/navbar/navbar"
 import { printEvents } from "../../components/pages/events_section/events_section"
 import { api } from "../../data/global_variables"
+import { outroAnimation } from "../sections/intro_animation"
 
  export const loginSubmit = async () => {
   const username = document.querySelector("#login-username-input").value
@@ -24,14 +25,16 @@ import { api } from "../../data/global_variables"
     localStorage.setItem("user", JSON.stringify(dataResponse))
     // sessionStorage.setItem("user", dataResponse.token)
     
-    alert(`welcome ${username}`)
+    // alert(`welcome ${username}`)
   
     const loginSection = document.querySelector("#login_section")
+    outroAnimation(loginSection)
+    setTimeout(() => {
     loginSection.remove()
-    
+      printNavbar()
+      printEvents()
+    }, 400);
   
-    printNavbar()
-    printEvents()
   } else { alert(`username or password incorrect`) }
 
   

@@ -32,6 +32,17 @@ export const printSignup = () => {
   formElement.classList.add("form-element")
   signupSection.append(formElement)
 
+  const pfpDiv = document.createElement("div")
+  pfpDiv.classList.add("form-div")
+  pfpDiv.classList.add("signup-form-div")
+  pfpDiv.setAttribute("id", "signup-image-input")
+  formElement.append(pfpDiv)
+  const pfpLabel = document.createElement("label")
+  pfpLabel.setAttribute("for", "signup-image-input")
+  pfpLabel.innerText = "profile picture"
+  pfpDiv.append(pfpLabel)
+  
+
   const usernameDiv = document.createElement("div")
   usernameDiv.classList.add("form-div")
   usernameDiv.classList.add("signup-form-div")

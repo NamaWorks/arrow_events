@@ -111,7 +111,13 @@ export const printLogedUserSection = async () => {
   backToEventsBtn.setAttribute("id", "back-to-events-btn")
   backToEventsBtn.innerText = "back to events"
   backToEventsBtn.classList.add("std-btn")
-  backToEventsBtn.addEventListener("click", printEvents)
+  backToEventsBtn.addEventListener("click", function () {
+    const currentSection = document.querySelector("section")
+    outroAnimation(currentSection)
+    setTimeout(() => {
+      printEvents()
+    }, 450);
+  })
   logedUserSection.append(backToEventsBtn)
 
   introAnimation(logedUserSection)

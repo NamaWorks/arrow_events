@@ -1,6 +1,7 @@
 import { printNavbar } from "../../components/elements/navbar/navbar"
 import { printEvents } from "../../components/pages/events_section/events_section"
 import { api } from "../../data/global_variables"
+import { outroAnimation } from "../sections/intro_animation"
 
 export const createEventSubmit = async () => {
   const eventName = document.querySelector("#event-name-input").value
@@ -9,9 +10,11 @@ export const createEventSubmit = async () => {
   console.log(eventDate)
   const eventDescription = document.querySelector("#event-description-input").value
   const eventCapacity = document.querySelector("#event-capacity-input").value
+  const logedUser = JSON.parse(localStorage.getItem("user"));
   const data = await fetch(api+"events/new", {
     headers: {
       "Content-type": "application/json",
+      Authorization: "Bearer " + logedUser.token
     },
     method: "POST",
     body: JSON.stringify({
@@ -23,15 +26,25 @@ export const createEventSubmit = async () => {
     })
   })
 
-  const dataResponse = await data.json()
-
   console.log(data)
 
-  if(data.status == 201){
-    alert(`event created`)
+  const dataResponse = await data.json()
 
-    printNavbar()
-    printEvents()
-  } else {alert(`error creating event`)}
+  console.log(dataResponse)
+
+  if(dataResponse.status == 201){
+    // alert(`event created`)
+
+    const currentSection = document.querySelector("section")
+    outroAnimation(currentSection)
+
+    setTimeout(() => {
+      printNavbar()
+      printEvents()
+    }, 400);
+
+  } else {
+    // alert(`error creating event`)
+  }
 
 }

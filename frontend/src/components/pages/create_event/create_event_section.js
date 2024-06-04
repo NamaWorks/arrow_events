@@ -111,9 +111,9 @@ export const printCreateEventSection = () => {
   submitEventBtn.setAttribute("id", "submit-event-btn")
   submitEventBtn.classList.add("submit-btn")
   formElement.append(submitEventBtn)
-  submitEventBtn.addEventListener("click", (e)=> {
+  submitEventBtn.addEventListener("click", async (e)=> {
     e.preventDefault()
-    createEventSubmit()
+    await createEventSubmit()
   })
   const submitEventBtnText = document.createElement("p")
   submitEventBtnText.setAttribute("id", "submit-event-btn-text")
