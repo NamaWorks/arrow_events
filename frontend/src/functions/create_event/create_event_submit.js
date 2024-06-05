@@ -1,4 +1,5 @@
 import { printNavbar } from "../../components/elements/navbar/navbar"
+import { printPopup } from "../../components/elements/popups/popups"
 import { printEvents } from "../../components/pages/events_section/events_section"
 import { api } from "../../data/global_variables"
 import { outroAnimation } from "../sections/intro_animation"
@@ -33,7 +34,7 @@ export const createEventSubmit = async () => {
   console.log(dataResponse)
 
   if(dataResponse.status == 201){
-    // alert(`event created`)
+    printPopup("event created", "green")
 
     const currentSection = document.querySelector("section")
     outroAnimation(currentSection)

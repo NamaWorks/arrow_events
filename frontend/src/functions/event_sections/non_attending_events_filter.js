@@ -2,15 +2,14 @@ import { printEvents } from "../../components/pages/events_section/events_sectio
 import { introAnimation, outroAnimationNoClean } from "../sections/intro_animation"
 
 
-export const filterNonAttendingEvents = (username) => {
+export const filterNonAttendingEvents = async (username) => {
 
   
   const section = document.querySelector("section")
   
   outroAnimationNoClean(section)
-  
+  await printEvents()
   setTimeout(() => {
-    printEvents()
     const events = document.querySelectorAll(".event")
   events.forEach(event => {
     let attendantsArr = []
@@ -22,7 +21,7 @@ export const filterNonAttendingEvents = (username) => {
     })
     if((attendantsArr.includes(username))){
       event.remove()
-    }
+    } 
   });
   introAnimation(section)
 }, 440);

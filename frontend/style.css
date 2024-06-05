@@ -26,6 +26,7 @@
   /*  MISC ITEMS */
   --square_divs_wh: 7.5px;
   --border_radius_sections: 20px 20px 0 0;
+  --border_radius: 20px;
   --borders_underline: 1px solid var(--aev_darkgrey);
 
 
@@ -123,7 +124,7 @@ button{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--aev_red);
+  background: var(--aev_darkgrey);
   transition: var(--main_transition);
   border-radius: 10px;
 }
