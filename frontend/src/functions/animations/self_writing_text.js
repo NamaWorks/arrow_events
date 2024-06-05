@@ -3,7 +3,7 @@ export const typewriter = (p) => {
   let pArr = p.innerHTML.split("")
   p.innerHTML = ""
 
-  let i = 1
+  let i = 0
   let pJoint = pArr.join("")
   
     const typewriterIn = () => {      

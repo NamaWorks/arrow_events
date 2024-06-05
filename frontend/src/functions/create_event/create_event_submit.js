@@ -46,6 +46,7 @@ export const createEventSubmit = async () => {
 
   } else {
     // alert(`error creating event`)
+    printPopup("error creating event", "red")
   }
 
 }

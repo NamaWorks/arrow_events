@@ -1,3 +1,4 @@
+import { printPopup } from "../../components/elements/popups/popups";
 import { printLogin } from "../../components/pages/login_section/login_section";
 import { api } from "../../data/global_variables";
 import { outroAnimation } from "../sections/intro_animation";
@@ -25,12 +26,16 @@ export const signupSubmit = async () => {
   console.log(dataResponse)
 
   if(data.status == 201){
+    printPopup("signed up succesfully", "green")
     const currentSection = document.querySelector("section")
     outroAnimation(currentSection)
     setTimeout(() => {
     currentSection.remove()
       printLogin()
     }, 400);
-  } else { alert(`error at signup`) }
+  } else { 
+    printPopup("error at signup", "red")
+    // alert(`error at signup`) 
+  }
   
 }

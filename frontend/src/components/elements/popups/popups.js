@@ -20,7 +20,9 @@ export function printPopup (content, color) {
     popupDiv.style.top = "20svh"
   }, 200);
 
-  typewriter(popupText)
+  setTimeout(() => {
+    typewriter(popupText)
+  }, 300);
   
   
   setTimeout(() => {

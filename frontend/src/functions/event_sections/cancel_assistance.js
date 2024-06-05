@@ -1,3 +1,4 @@
+import { printPopup } from "../../components/elements/popups/popups";
 import { printEvents } from "../../components/pages/events_section/events_section"
 import { api } from "../../data/global_variables"
 import { introAnimation, outroAnimation } from "../sections/intro_animation";
@@ -46,6 +47,7 @@ export const cancelAssistance = async (btnElement) => {
       }, 450);
       const sectionNew = document.querySelector("section")
       introAnimation(sectionNew)
+      printPopup("assistance canceled", "green")
       // alert(`assistance canceled`)
     }
   });

@@ -1,3 +1,4 @@
+import { printPopup } from "../../components/elements/popups/popups"
 import { printEvents } from "../../components/pages/events_section/events_section"
 import { api } from "../../data/global_variables"
 import { introAnimation, outroAnimation } from "../sections/intro_animation"
@@ -44,6 +45,8 @@ export const confirmAssistance = async (btnElement) => {
       }, 450);
       const sectionNew = document.querySelector("section")
       introAnimation(sectionNew)
+
+      printPopup("assistance confirmed", "green")
       // alert(`assistance confirmed`)
     }
   });

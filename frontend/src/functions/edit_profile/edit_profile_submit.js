@@ -1,3 +1,4 @@
+import { printPopup } from "../../components/elements/popups/popups"
 import { api } from "../../data/global_variables"
 import { logoutSubmit } from "../logout/logout_submit"
 
@@ -32,10 +33,14 @@ export const submitProfileChanges = async () => {
 
   const dataResponse = await data.json()
   if(data.status == 200) {
-    alert(`user data updated`)
-    logoutSubmit()
+    printPopup("user data updated", "green")
+    // alert(`user data updated`)
+    setTimeout(() => {
+      logoutSubmit()
+    }, 600);
   } else {
-    alert(`error at saving changes`)
-    console.log(data.message)
+    printPopup("error at saving changes", "red")
+    // alert(`error at saving changes`) 
+    // console.log(data.message)
   }
 }
