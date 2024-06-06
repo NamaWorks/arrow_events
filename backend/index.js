@@ -26,8 +26,8 @@ server.use("*", (req, res, next) => {
   return res.status(404).json(`error 404: route not found`)
 })
 
-server.listen(3000, ()=> {
-   console.log(`server launched at: http://localhost:3000`)
+server.listen(3500, ()=> {
+   console.log(`server launched at: http://localhost:3500`)
 })
 
  

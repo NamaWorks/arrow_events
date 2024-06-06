@@ -65,7 +65,7 @@ export const printLogedUserSection = async () => {
   userEmail.innerText = email
   logedUserSection.append(userEmail)
 
-  const userAttendingEventsFetch = await fetch("http://localhost:3000/events/all")
+  const userAttendingEventsFetch = await fetch(api + "events/all")
   const userAttendingEventsResponse = await userAttendingEventsFetch.json()
   
   let attendingEvents = []

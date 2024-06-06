@@ -17,7 +17,7 @@ export function printPopup (content, color) {
   
   setTimeout(() => {
     // popupDiv.style.left = "0svw"
-    popupDiv.style.top = "20svh"
+    popupDiv.style.top = "15svh"
   }, 200);
 
   setTimeout(() => {

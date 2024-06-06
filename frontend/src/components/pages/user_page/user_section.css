@@ -36,6 +36,7 @@
   color: var(--aev_darkgrey);
   margin: 0  var(--sections_divs_padding_left) var(--sections_divs_padding_left);
   padding: 0.5rem ;
+  cursor: pointer;
 }
 
 h4{

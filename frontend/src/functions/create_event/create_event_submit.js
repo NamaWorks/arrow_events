@@ -31,9 +31,8 @@ export const createEventSubmit = async () => {
 
   const dataResponse = await data.json()
 
-  console.log(dataResponse)
-
-  if(dataResponse.status == 201){
+  
+  if(data.status == 201){
     printPopup("event created", "green")
 
     const currentSection = document.querySelector("section")
@@ -46,7 +45,8 @@ export const createEventSubmit = async () => {
 
   } else {
     // alert(`error creating event`)
-    printPopup("error creating event", "red")
+
+    printPopup("error " + data.status, "red")
   }
 
 }
