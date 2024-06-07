@@ -3,6 +3,7 @@ import "./navbar.css"
 import { data } from "../../../data/data"
 import { app } from "../../../data/global_variables"
 import { checkNavbar } from "./navbar_checker"
+import { navigate } from "../../../router/navigate"
 
 export const printNavbar = () => {
 
@@ -26,8 +27,14 @@ export const printNavbar = () => {
     li.setAttribute("id", `${navElement}-li`)
     const btnLi = document.createElement("button")
     btnLi.setAttribute("id", `${navElement}`)
+    btnLi.setAttribute("href", `/${navElement}`)
     
-    btnLi.innerText = data.navItems[navElement].text
+    btnLi.innerText = data.navItems[navElement].text;
+
+    const { page, text, path } = data.navItems[navElement]
+    console.log(path)
+
+    btnLi.addEventListener("click", (e) => {navigate({ e, page, text, path })})
     
     li.append(squareDiv)
     li.append(btnLi)
