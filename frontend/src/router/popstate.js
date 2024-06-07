@@ -6,13 +6,15 @@ export const popStateListener = () => {
     const link = routes.find(
       (link) => {
         link.path === window.location.pathname
-      }
-    );
-    link?.page()
+        }
+        );
 
-    if(!link) {
+
+        link?.page()
+        
+        if(!link) {
       printEvents();
       window.history.pushState("", "", "/")
     }
-  });
+  })
 }

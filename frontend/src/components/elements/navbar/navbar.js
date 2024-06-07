@@ -32,7 +32,6 @@ export const printNavbar = () => {
     btnLi.innerText = data.navItems[navElement].text;
 
     const { page, text, path } = data.navItems[navElement]
-    console.log(path)
 
     btnLi.addEventListener("click", (e) => {navigate({ e, page, text, path })})
     
