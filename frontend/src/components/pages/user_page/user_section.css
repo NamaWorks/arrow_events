@@ -108,3 +108,13 @@ h4{
   overflow: scroll;
   height: 150px;
 }
+
+@media (max-width:1200px) {
+  h4{
+    font-size: var(--font_size_xl_mob);
+  }
+}
+
+@media (max-width:450px) {
+  
+}

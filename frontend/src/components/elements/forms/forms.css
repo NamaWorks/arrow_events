@@ -79,3 +79,28 @@
 .submit-btn p {
   line-height: calc(var(--line_height_sections_forms) + 0.1);
 }
+
+@media (max-width:1200px) {
+  
+  .submit-btn {
+    font-size: var(--font_size_xl_mob);
+  }  
+
+  .form-div ::placeholder, .form-div input{
+    font-size: 14px;
+    bottom: 0px;
+  }
+
+  .form-div label, .form-title{
+    font-size: var(--font_size_xl_mob);
+  }
+}
+
+@media (max-width:600px) {
+  .form-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

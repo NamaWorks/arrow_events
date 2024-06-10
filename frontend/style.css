@@ -17,8 +17,8 @@
   /* TEXTS */
   --font_fam: "JetBrains Mono" ,"inter", monospace;
   --font_size_m: 12px;
-  --font_size_l: 25px;
-  --font_size_xl: 50px;
+  --font_size_l: 20px;
+  --font_size_xl: 48px;
   --font_weight_xs: 100;
   --font_weight_m: 400;
   --text_form_bottom: -10px;
@@ -44,12 +44,20 @@
   /* ICONS */
   --icon_div_width: 2.25rem;
   --icon_div_position_top:0.6rem;
-
+  
   /* IMAGES */
   --user_section_image_width: 220px;
-
+  
   /* TRANSITIONS */
   --main_transition: 0.45s cubic-bezier(.41,-0.01,.47,.99);
+  
+  
+  /* RESPONSIVE */
+    /* MOBILE TEXTS */
+  --font_size_xl_mob: 30px;
+  --icon_div_width_mob: 20px;
+
+
 }
 
 * {

@@ -64,4 +64,14 @@ nav {
   background-color: var(--aev_red);
  }
 
+ @media (max-width:600px) {
+  .ul-nav{
+    display: flex;
+    gap: 15px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    right: 1rem;
+    /* top: 3rem; */
+  }
+ }
  

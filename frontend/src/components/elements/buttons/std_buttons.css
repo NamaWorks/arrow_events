@@ -27,3 +27,16 @@
   rotate: 0deg;
   transition: var(--main_transition);
 }
+
+@media (max-width:1200px) {
+  .std-btn {
+    font-size: var(--font_size_xl_mob);
+  }
+}
+
+@media (max-width:600px) {
+  .std-btn {
+    text-align: end;
+    line-height: 2rem;
+  }
+}

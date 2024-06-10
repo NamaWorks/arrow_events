@@ -125,3 +125,16 @@ article button {
   max-width: 50svw;
   background-color: transparent;
 }
+
+
+@media (max-width:1200px) {
+
+  .event-title {
+    font-size: var(--font_size_xl_mob);
+  }
+
+}
+
+@media (max-width:600px){
+  
+}
