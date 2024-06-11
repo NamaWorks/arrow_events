@@ -37,6 +37,7 @@ import { outroAnimation } from "../sections/intro_animation"
     }, 400);
   
   } else { 
+    console.log(dataResponse)
     // alert(`username or password incorrect`) 
     printPopup("username or password incorrect", "red")
   }
