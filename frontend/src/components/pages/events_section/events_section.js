@@ -57,13 +57,16 @@ export const printEvents = async () => {
     article.classList.add("event")
     eventsSection.append(article)
 
-    setRandomColorClass(article)
+    // setRandomColorClass(article)
 
     // -------------------------------------------;-
 
     const eventTitleDiv = document.createElement("div")
     eventTitleDiv.classList.add("event-title")
     article.append(eventTitleDiv)
+
+    const eventColor = event.color
+    article.classList.add(eventColor)
 
     const eventTitleH3 = document.createElement("h3")
     eventTitleH3.innerText = await event.title
