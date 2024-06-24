@@ -107,6 +107,27 @@ export const printCreateEventSection = () => {
   eventCapacityInput.setAttribute("placeholder", "capacity")
   eventCapacityDiv.append(eventCapacityInput)
 
+  const eventColorDiv = document.createElement("div")
+  eventColorDiv.classList.add("create-event-form-div")
+  eventColorDiv.classList.add("form-div")
+  eventColorDiv.setAttribute("id", "create-event-color-div")
+  formElement.append(eventColorDiv)
+  const colorLabel = document.createElement("label")
+  colorLabel.setAttribute("for", "event-color-input")
+  colorLabel.innerText = "color"
+  eventColorDiv.append(colorLabel)
+  const eventColorInput = document.createElement("select")
+  // eventColorInput.setAttribute("type", "select")
+  eventColorInput.setAttribute("id", "event-color-input")
+  eventColorDiv.append(eventColorInput)
+  const colors = ["red", "yellow", "orange", "purple", "lightblue", "aquagreen", "white"]
+  colors.forEach(color => {
+    const eventColorInputOpt = document.createElement("option")    
+    eventColorInputOpt.setAttribute("value", color)
+    eventColorInputOpt.innerText = color
+    eventColorInput.append(eventColorInputOpt)
+  });
+
   const submitEventBtn = document.createElement("button")
   submitEventBtn.setAttribute("id", "submit-event-btn")
   submitEventBtn.classList.add("submit-btn")

@@ -80,6 +80,20 @@
   line-height: calc(var(--line_height_sections_forms) + 0.1);
 }
 
+select {
+  background-color: transparent;
+  border: none;
+  font-size: var(--font_size_xl);
+  opacity: .5;
+  color: var(--aev_darkgrey);
+  font-weight: var(--font_weight_xs);
+  padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: -0.5rem;
+  margin-left: 2rem;
+}
+
 @media (max-width:1200px) {
   
   .submit-btn {
