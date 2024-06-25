@@ -94,6 +94,7 @@ export const printEditProfileSection = async () => {
   
   submitChangesBtn.addEventListener("click", (e) => {
     e.preventDefault()
+    printPopup("Change in user submited, wait a second", "yellow")
     submitProfileChanges()
   } )
 formElement.append(submitChangesBtn)
