@@ -32,11 +32,16 @@ outroAnimation(currentSection)
     printSignup()
   })}
 
-  if(document.getElementById("events")) {document.getElementById("events").addEventListener("click", function (){
+  if(document.getElementById("events")) {
+
+    document.getElementById("events").addEventListener("click", function (){
     const currentSection = document.querySelector("section")
-outroAnimation(currentSection)
+    outroAnimation(currentSection)
     printEvents()
-  })}
+  })
+}
+
+
 
   if(document.getElementById("login")) {document.getElementById("login").addEventListener("click", function (){
     const currentSection = document.querySelector("section")

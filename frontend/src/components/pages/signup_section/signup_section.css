@@ -15,7 +15,8 @@
 }
 
 #pfp-input {
-  display: none;
+  /* display: none; */
+  background-color: none;
 }
 
 #signup-password-div {
