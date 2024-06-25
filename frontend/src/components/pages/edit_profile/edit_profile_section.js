@@ -8,6 +8,7 @@ import { deactivateAccount } from "../../../functions/edit_profile/deactivate_ac
 import { submitProfileChanges } from "../../../functions/edit_profile/edit_profile_submit"
 import { clearSections } from "../../../functions/sections/clear_sections"
 import { introAnimation } from "../../../functions/sections/intro_animation"
+import { printPopup } from "../../elements/popups/popups"
 
 export const printEditProfileSection = async () => {
   clearSections()

@@ -76,10 +76,11 @@ export const printEvents = async () => {
     const arrow = printIcon("https://res.cloudinary.com/dgrhbsilh/image/upload/v1716960281/14_RTC_P10_be-to-fe-js/icons/arrow_hfuzjx.png")
 
     eventTitleDiv.append(arrow)
+    eventTitleDiv.addEventListener("click", function (e) {eventToggle(this)})
 
     arrow.classList.add("no-rotate")
     arrow.classList.add("position-start")
-    arrow.addEventListener("click", function (e) {eventToggle(this)})
+    // arrow.addEventListener("click", function (e) {eventToggle(this)})
 
     // --------------------------------------------
 

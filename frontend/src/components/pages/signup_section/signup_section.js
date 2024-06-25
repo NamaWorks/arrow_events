@@ -6,6 +6,7 @@ import { clearSections } from "../../../functions/sections/clear_sections"
 import { signupSubmit } from "../../../functions/signup/signup_submit"
 import { printBrand } from "../../elements/brand/at-events"
 import { introAnimation } from "../../../functions/sections/intro_animation"
+import { printPopup } from "../../elements/popups/popups"
 
 export const printSignup = () => {
   clearSections()
@@ -97,6 +98,7 @@ export const printSignup = () => {
   submitSignupBtn.setAttribute("id", "submit-signup-btn")
   submitSignupBtn.addEventListener("click", (e) => {
     e.preventDefault()
+    printPopup("Signup submited, wait a second", "yellow")
     signupSubmit()
   })
   formElement.append(submitSignupBtn)
