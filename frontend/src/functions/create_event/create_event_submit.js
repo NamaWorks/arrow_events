@@ -13,6 +13,7 @@ export const createEventSubmit = async () => {
   const eventCapacity = document.querySelector("#event-capacity-input").value
   const eventColor = document.querySelector("#event-color-input").value
   const logedUser = JSON.parse(localStorage.getItem("user"));
+  console.log(logedUser.user.username)
   const data = await fetch(api+"events/new", {
     headers: {
       "Content-type": "application/json",
@@ -25,13 +26,15 @@ export const createEventSubmit = async () => {
       date: eventDate,
       location: eventLocation,
       capacity: eventCapacity,
-      color: eventColor
+      color: eventColor,
+      attendants: [logedUser.user._id]
     })
   })
 
   console.log(data)
 
   const dataResponse = await data.json()
+  console.log(dataResponse)
 
   
   if(data.status == 201){
