@@ -40,13 +40,18 @@ export const printSignup = () => {
   formElement.append(pfpDiv)
   const pfpLabel = document.createElement("label")
   pfpLabel.setAttribute("for", "pfp-input")
-  pfpLabel.innerText = "profile picture"
+  // pfpLabel.innerText = "profile picture"
+  pfpLabel.innerHTML = "profile picture <span class='pfp-note'>click to add</span>"
   pfpDiv.append(pfpLabel)
   const pfpInput = document.createElement("input")
   pfpInput.setAttribute("id", "pfp-input")
   pfpInput.setAttribute("type", "file")  
   pfpInput.setAttribute("accept", "image/png, image/jpg")
   pfpDiv.append(pfpInput)
+
+  pfpInput.addEventListener("change", ()=>{ pfpInput.value ? pfpLabel.innerHTML = "profile picture <span class='pfp-note'>already added</span>" : pfpLabel.innerHTML = "profile picture <span class='pfp-note'>click to add</span>"})
+  
+
 
   const usernameDiv = document.createElement("div")
   usernameDiv.classList.add("form-div")

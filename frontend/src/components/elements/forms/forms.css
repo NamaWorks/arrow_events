@@ -92,6 +92,14 @@ select {
   margin-left: 2rem;
 }
 
+.pfp-note {
+  opacity: .5;
+  color: var(--aev_darkgrey);
+  font-weight: var(--font_weight_xs);
+  text-transform: lowercase;
+  margin: 0 0 0 2rem;
+}
+
 @media (max-width:1200px) {
   
   .submit-btn {

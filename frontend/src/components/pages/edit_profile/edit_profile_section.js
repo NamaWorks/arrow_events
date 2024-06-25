@@ -53,13 +53,18 @@ export const printEditProfileSection = async () => {
   formElement.append(changePfpDiv)
   const changeProfilePictureLabel = document.createElement("label")
   changeProfilePictureLabel.setAttribute("for", "change-pfp-input")
-  changeProfilePictureLabel.innerText = "change profile picture"
-  changePfpDiv.append(changeProfilePictureLabel)
+  // changeProfilePictureLabel.innerText = "change profile picture"
+  
   const changeProfilePictureInput = document.createElement("input")
   changeProfilePictureInput.setAttribute("id", "change-pfp-input")
   changeProfilePictureInput.setAttribute("type", "file")
   changeProfilePictureInput.setAttribute("accept", "image/png, image/jpg")
   changePfpDiv.append(changeProfilePictureInput)
+  
+    changeProfilePictureLabel.innerHTML = "change profile picture <span class='pfp-note'>click to add</span>"
+    changeProfilePictureInput.addEventListener("change", ()=>{ changeProfilePictureInput.value ? changeProfilePictureLabel.innerHTML = "change profile picture <span class='pfp-note'>already added</span>" : changeProfilePictureLabel.innerHTML = "change profile picture <span class='pfp-note'>click to add</span>"})
+    changePfpDiv.append(changeProfilePictureLabel)
+
 
   const usernameDiv = document.createElement("div")
   usernameDiv.classList.add("form-div")
