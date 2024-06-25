@@ -6,6 +6,7 @@ import { clearSections } from "../../../functions/sections/clear_sections"
 import { printBrand } from "../../elements/brand/at-events"
 import { printIcon } from "../../elements/brand/icons"
 import { introAnimation } from "../../../functions/sections/intro_animation"
+import { printPopup } from "../../elements/popups/popups"
 
 export const printCreateEventSection = () => {
   
@@ -134,7 +135,8 @@ export const printCreateEventSection = () => {
   formElement.append(submitEventBtn)
   submitEventBtn.addEventListener("click", async (e)=> {
     e.preventDefault()
-    await createEventSubmit()
+    printPopup("Event submited, wait a second", "yellow")
+      await createEventSubmit()
   })
   const submitEventBtnText = document.createElement("p")
   submitEventBtnText.setAttribute("id", "submit-event-btn-text")
