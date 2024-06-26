@@ -7,6 +7,7 @@ import { signupSubmit } from "../../../functions/signup/signup_submit"
 import { printBrand } from "../../elements/brand/at-events"
 import { introAnimation } from "../../../functions/sections/intro_animation"
 import { printPopup } from "../../elements/popups/popups"
+import { loginSubmitFromSignUp } from "../../../functions/signup/login_submit_from_signup"
 
 export const printSignup = () => {
   clearSections()
@@ -101,10 +102,12 @@ export const printSignup = () => {
   const submitSignupBtn = document.createElement("button")
   submitSignupBtn.classList.add("submit-btn")
   submitSignupBtn.setAttribute("id", "submit-signup-btn")
-  submitSignupBtn.addEventListener("click", (e) => {
+  submitSignupBtn.addEventListener("click", async (e) => {
     e.preventDefault()
     printPopup("Signup submited, wait a second", "yellow")
-    signupSubmit()
+    let signupStatus = await signupSubmit()
+    console.log(signupStatus)
+    signupStatus = 201 ? loginSubmitFromSignUp() : console.log(`something went wrong`)
   })
   formElement.append(submitSignupBtn)
   const submitSignupBtnText = document.createElement("p")
