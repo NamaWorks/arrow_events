@@ -11,6 +11,7 @@ import { loginSubmitFromSignUp } from "../../../functions/signup/login_submit_fr
 
 export const printSignup = () => {
   clearSections()
+  sessionStorage.setItem("currentPage", "signup")
   const signupSection = document.createElement("section")
   signupSection.setAttribute("id", "signup_section")
   signupSection.style.top = "100svh"

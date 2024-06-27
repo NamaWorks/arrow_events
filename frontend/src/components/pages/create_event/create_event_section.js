@@ -18,6 +18,8 @@ export const printCreateEventSection = () => {
     printBrand()
   }, 400);
 
+  sessionStorage.setItem("currentPage", "create-event")
+
 
   const createEventTitleDiv = document.createElement("div")
   createEventTitleDiv.setAttribute("id", "create-event-title-div")

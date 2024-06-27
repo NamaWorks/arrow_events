@@ -13,6 +13,8 @@ import { printPopup } from "../../elements/popups/popups"
 export const printEditProfileSection = async () => {
   clearSections()
 
+  sessionStorage.setItem("currentPage", "edit-profile")
+
   const user = localStorage.getItem("user")
 
   const userJson = JSON.parse(user)

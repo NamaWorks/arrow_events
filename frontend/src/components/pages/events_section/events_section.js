@@ -17,7 +17,9 @@ import { introAnimation } from "../../../functions/sections/intro_animation";
 
 
 export const printEvents = async () => {
+  
   clearSections()
+  sessionStorage.setItem("currenPage", "events")
   const eventsSection = document.createElement("section")
   eventsSection.setAttribute("id", "events_section")
   eventsSection.style.top = "100svh"
@@ -27,34 +29,40 @@ export const printEvents = async () => {
   printBrand()
   const logedUser = JSON.parse(localStorage.getItem("user"))
   
-  const res = await fetch(api+"events/all");
-  const events = await res.json()
-
-
-  if(logedUser) {
-    const attendingEventsbtn = document.createElement("button")
-    attendingEventsbtn.innerText = "attending events"
-    attendingEventsbtn.classList.add("std-btn")
-    attendingEventsbtn.addEventListener("click", async () => {
-      // await printEvents()
-      filterAttendingEvents(logedUser.user.username)
-    })
-    eventsSection.append(attendingEventsbtn)
-    
-    const notAttendingEventsbtn = document.createElement("button")
-    notAttendingEventsbtn.innerText = "non attending events"
-    notAttendingEventsbtn.classList.add("std-btn")
-    notAttendingEventsbtn.addEventListener("click", async () => {
-      // await printEvents()
-      filterNonAttendingEvents(logedUser.user.username)
-    })
-    eventsSection.append(notAttendingEventsbtn)
-  }
+  const currentSection  = sessionStorage.getItem("currentPage")
   
-  for (const event of events) {
-    // console.log(event.title)
-    const article = document.createElement("article")
-    article.classList.add("event")
+  console.log(currentSection)
+  
+    
+    
+    const res = await fetch(api+"events/all");
+    const events = await res.json()
+    
+    
+    if(logedUser) {
+      const attendingEventsbtn = document.createElement("button")
+      attendingEventsbtn.innerText = "attending events"
+      attendingEventsbtn.classList.add("std-btn")
+      attendingEventsbtn.addEventListener("click", async () => {
+        // await printEvents()
+        filterAttendingEvents(logedUser.user.username)
+      })
+      eventsSection.append(attendingEventsbtn)
+      
+      const notAttendingEventsbtn = document.createElement("button")
+      notAttendingEventsbtn.innerText = "non attending events"
+      notAttendingEventsbtn.classList.add("std-btn")
+      notAttendingEventsbtn.addEventListener("click", async () => {
+        // await printEvents()
+        filterNonAttendingEvents(logedUser.user.username)
+      })
+      eventsSection.append(notAttendingEventsbtn)
+    }
+    
+    for (const event of events) {
+      // console.log(event.title)
+      const article = document.createElement("article")
+      article.classList.add("event")
     eventsSection.append(article)
 
     // setRandomColorClass(article)
@@ -174,7 +182,7 @@ export const printEvents = async () => {
     }
   }
 
-
   introAnimation(eventsSection)
-
+  sessionStorage.setItem("currentPage", "events")
+  
 }
